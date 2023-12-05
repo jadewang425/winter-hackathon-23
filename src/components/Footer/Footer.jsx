@@ -4,7 +4,7 @@ export default function Footer () {
     return (
         <div className="w-full flex justify-between px-5">
             <div className="mb-2">
-                <div className="hover:underline"><Link to="/about">About Us</Link></div>
+                <div className="hover:underline"><Link to="about">About Us</Link></div>
                 <div className="hover:underline"><Link to="/adoption">Adoption</Link></div>
                 <div className="hover:underline"><Link to="/contactus">Contact Us</Link></div>
             </div>

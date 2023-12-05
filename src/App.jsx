@@ -6,7 +6,7 @@ import AdoptionPage from './pages/AdoptionPage'
 import PetDetailPage from './pages/PetDetailPage'
 import Navbar from './components/Navbar/Navbar'
 import { PetProvider } from './utilities/PetContext'
-import Footer from './components/Navbar/Footer'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
