@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { usePet } from "../utilities/PetContext";
+import { Link } from "react-router-dom";
 
 const AdoptionPage = () => {
   const { getPetByType } = usePet();
   const [pets, setPets] = useState([]);
   const [zipcode, setZipcode] = useState("");
   const [error, setError] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false)
 
   const handleButtonClick = async (animalType) => {
     if (isNaN(zipcode) || zipcode === "") {
@@ -36,11 +38,32 @@ const AdoptionPage = () => {
       {error && <p className="text-red-500">{error}</p>}
       {/* below is code to make sure you are getting results. we still need to ad css to the page container which is why it looks very funky 
       when the below code is uncommented */}
-      {/* <ul>
-        {pets.map((pet) => (
-          <li key={pet.id}>{pet.name}</li>
-        ))}
-      </ul> */}
+        <table>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Breed</th>
+              <th>Gender</th>
+              {/* <th>Url</th> */}
+            </tr>
+          </thead>
+          <tbody>
+            {pets.map((pet) => (
+              <tr key={pet.id}>
+                <td>
+                  {pet.photos.length > 0 && ( 
+                  <img src={pet.photos[0].small} alt={pet.name} style={{ maxWidth: '100px'}} />)}
+                </td>
+                <td> {pet.name}</td>
+                <td>{pet.age}</td>
+                <td>{pet.breeds.length > 0 && pet.breeds.primary}</td>
+                <td>{pet.gender}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
     </div>
   );
 };
