@@ -9,7 +9,14 @@ About page
 Adoption page
 ![Screenshot](https://i.imgur.com/MiJellA.png)
 
-## User Stories
+### Goals
+- Redesign a more visually appealing website focusing on Home, About, and Adoption pages
+- Utilize Petfinder API to display adoptable pets on the Adoption page
+- Display donation button
+- Include Facebook page
+
+### Next Steps
+- Display Facebook posts
 
 ## Technologies Used
 - React.js
