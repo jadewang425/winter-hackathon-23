@@ -26,16 +26,23 @@ Adoption page
 - Petfinder API
 
 ## Wireframes
-![Screenshot]()
+#### Homepage
+![Screenshot](https://i.imgur.com/dtaf65g.png)
+#### Mobile Menu
+![Screenshot](https://i.imgur.com/9exLccO.png)
+#### Available Pets page
+![Screenshot](https://i.imgur.com/qEg2aDz.png)
+#### Contact Us page
+![Screenshot](https://i.imgur.com/VXrjtbR.png)
 
 ## Contacts
-### UX/UI Designers
+#### UX/UI Designers
 - [Alicen Matthews](https://www.linkedin.com/in/alicenmatthews/)
 - [Allison Huston](https://www.linkedin.com/in/al-huston/)
 - [Dewey Song](https://www.linkedin.com/in/duhyungsong/)
 - [Jack Rasmussen](https://www.linkedin.com/in/j-rasmussen/)
 
-### Software Developers
+#### Software Developers
 - [Carla Pacheco](https://github.com/cmpacheco23)
 - [Jade Wang](https://github.com/jadewang425)
 - [Kusal Tholka Mudalige](https://github.com/aizealawin)
