@@ -6,6 +6,7 @@ import AdoptionPage from './pages/AdoptionPage'
 import PetDetailPage from './pages/PetDetailPage'
 import Navbar from './components/Navbar/Navbar'
 import { PetProvider } from './utilities/PetContext'
+import Footer from './components/Navbar/Footer'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/adoption/:id' element={<PetDetailPage />} />
         </Routes>
       </main>
+      <Footer />
     </PetProvider>
   )
 }
