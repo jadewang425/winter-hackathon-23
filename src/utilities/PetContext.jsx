@@ -40,7 +40,7 @@ export const PetProvider = ({children}) => {
         }
     };
 
-    const getPetByType = async (petType) => {
+    const getPetByType = async (petType, zipcode) => {
     
         try {
           const response = await axios.get(
@@ -51,11 +51,10 @@ export const PetProvider = ({children}) => {
               },
               params: {
                 type: petType,
+                location: zipcode,
               },
             }
           );
-    
-          console.log("API Response:", response.data.animals);
     
           return response.data.animals;
         } catch (error) {
