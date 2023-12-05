@@ -7,7 +7,6 @@ const AdoptionPage = () => {
   const [pets, setPets] = useState([]);
   const [zipcode, setZipcode] = useState("");
   const [error, setError] = useState("");
-  const [buttonClicked, setButtonClicked] = useState(false)
 
   const handleButtonClick = async (animalType) => {
     if (isNaN(zipcode) || zipcode === "") {
@@ -56,7 +55,7 @@ const AdoptionPage = () => {
                   {pet.photos.length > 0 && ( 
                   <img src={pet.photos[0].small} alt={pet.name} style={{ maxWidth: '100px'}} />)}
                 </td>
-                <td> {pet.name}</td>
+                <Link to={`/adoption/${pet.id}`}>{pet.name}</Link>
                 <td>{pet.age}</td>
                 <td>{pet.breeds.length > 0 && pet.breeds.primary}</td>
                 <td>{pet.gender}</td>
