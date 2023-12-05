@@ -13,7 +13,7 @@ function App() {
 
   return (
     <PetProvider>
-      <main className='w-[100vw] min-h-[100vh] flex justify-center items-start pt-[70px]'>
+      <main className='w-[100vw] min-h-[100vh] flex justify-center items-start pt-[90px]'>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
