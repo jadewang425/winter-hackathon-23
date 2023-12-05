@@ -12,13 +12,15 @@ function App() {
 
   return (
     <PetProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/adoption" element={<AdoptionPage />} />
-        <Route path='/adoption/:id' element={<PetDetailPage />} />
-      </Routes>
+      <main className='w-[100vw] min-h-[100vh] flex justify-center items-start pt-[70px]'>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/adoption" element={<AdoptionPage />} />
+          <Route path='/adoption/:id' element={<PetDetailPage />} />
+        </Routes>
+      </main>
     </PetProvider>
   )
 }
