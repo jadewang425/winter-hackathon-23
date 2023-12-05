@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { usePet } from "../utilities/PetContext";
+import { usePet } from "./utilities/PetContext";
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage'
