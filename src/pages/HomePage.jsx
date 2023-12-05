@@ -1,8 +1,14 @@
-import React from 'react'
+import AvailablePets from "../components/Navbar/AvailablePets"
+import Facebook from "../components/Navbar/Facebook"
+import Carousel from "../components/Navbar/carousel"
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div className="App">
+      <Carousel />
+      <AvailablePets />
+      <Facebook />
+    </div>
   )
 }
 
