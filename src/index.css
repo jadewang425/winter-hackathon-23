@@ -22,7 +22,13 @@ body {
   background-color: #FFF;
 }
 
-*, *::before, *::after {
+.main {
+  min-height: calc(100vh - 75px);
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
