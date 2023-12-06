@@ -6,7 +6,7 @@ import Carousel from "../components/Navbar/carousel"
 const HomePage = () => {
   
   return (
-    <div className="App">
+    <div className="w-full flex flex-col justify-start items-center z-0 relative">
       <Carousel />
       <AvailablePets/>
       <Facebook />
