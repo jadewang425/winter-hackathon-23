@@ -11,8 +11,9 @@ const AboutPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const serviceId = import.meta.env.SERVICE_ID;
-    const templateId = import.meta.env.TEMPLATE_ID;
+    const serviceId = 'service_re68a1i';
+    const templateId = 'template_mgmo33e'
+    const publicKey = 'qgxNOflZEFFroNfCX'
     try {
       setLoading(true)
       await emailjs.send(
@@ -21,7 +22,8 @@ const AboutPage = () => {
         {
           name: nameRef.current.value,
           recipient: emailRef.current.value
-        });
+        },
+        publicKey);
       alert("email successfully sent")
     } catch (error) {
       console.log(error)
