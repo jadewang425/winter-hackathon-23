@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
   return (
-    <header className='w-full shadow-[0_0_5px_0_rgba(0,0,0,0.3)] flex justify-center items-center fixed top-0 z-20 h-[75] px-5 py-1'>
+    <header className='w-full shadow-[0_0_5px_0_rgba(0,0,0,0.3)] bg-white left-0 flex justify-center items-center fixed top-0 z-20 h-[75] px-5 py-1'>
         <div className="max-w-6xl w-full flex justify-between items-center ">
             <div className='flex gap-3 justify-center items-center'>
                 <NavLink to="/">
