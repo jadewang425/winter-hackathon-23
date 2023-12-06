@@ -4,28 +4,44 @@ import { usePet } from "../../utilities/PetContext"
 
 export default function AvailablePets() {
     const { getPetByType } = usePet();
-    // const [dogs, setDogs] = useState([]);
-    // const [cats, setCats] = useState([]);
+    const [dogs, setDogs] = useState([]);
+    const [cats, setCats] = useState([]);
     // const [error, setError] = useState("");
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
         async function getPets() {
+            try {
+                const petsByType = await getPetByType();
+                const pets = petsByType.slice(0,150)
+                setPets(pets)
+                const cats = pets.filter((pet) => pet.species === 'Cat')
+                setCats(cats)
+                console.log('CATS',cats)
+                const dogs = pets.filter((pet) => pet.species === 'Dog')
+                console.log('DOGS',dogs)
+                setDogs(dogs)
+                // if (pets.species === 'Dog') {
+                //     pets.push(dogs)
+                //     setDogs(dogs)
+                //     return setDogs.slice(0,30)
+                // } else if (pets.species === 'Cat'){
+                //     pets.push(cats)
+                //     setCats(cats)
+                //     return setCats.slice(0,30)
+                // }
+
+                // console.log(dogs);
+                console.log(pets)
+                
+            } catch (error) {
+                console.log("Error fetching pets:", error)
+                
+            }
             
-            const petsByType = await getPetByType();
-            const pets = petsByType.slice(0,10)
-            setPets(pets)
-            console.log(pets)
         }
         getPets();
     }, []);
-    // const filteredDogs = dogsData.filter((dog) => dog.organization_id === "la424");
-
-    // setDogs(filteredDogs.slice(0, 30));
-
-    // const catsData = await getPetByType(animalType);
-    // const filteredCats = catsData.filter((cat) => cat.organization_id === "la424");
-    // setCats(filteredCats.slice(0, 30));
 
     return (
         <div className="w-full h-screen">
