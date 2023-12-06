@@ -6,7 +6,7 @@ const Resources = () => {
 
   return (
     <div >
-      <h1 className='bg-gray-300 my-4 px-5 py-2 font-bold'>Resources</h1>
+      <div className='bg-gray-300 my-4 px-5 py-2 font-bold'>Resources</div>
 
       <div className=''>
 

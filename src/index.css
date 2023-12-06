@@ -22,6 +22,10 @@ body {
   background-color: #FFF;
 }
 
+.main {
+  min-height: calc(100vh - 75px);
+}
+
 *,
 *::before,
 *::after {

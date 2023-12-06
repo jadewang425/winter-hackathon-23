@@ -15,7 +15,7 @@ function App() {
 
   return (
     <PetProvider>
-      <main className=' pt-[90px]'>
+      <main className='main pt-[90px]'>
         <Navbar />
         <Routes>
           <Route
