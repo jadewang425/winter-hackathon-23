@@ -13,10 +13,14 @@ export default function AvailablePets() {
             const sortedPets = homePets.slice().sort((a,b) => new Date(a.published_at) - new Date(b.published_at))
             const dogs = sortedPets.filter(pet => pet.species === 'Dog');
             setDogs(dogs.slice(0,3))
+        
             const cats = sortedPets.filter(pet => pet.species === 'Cat');
             setCats(cats.slice(0,3))
         }
     }, [homePets]);
+    useEffect(() => {
+        console.log('CATS',cats)
+    }, [cats, dogs]);
 
     return (
         <div className="w-full h-screen">
@@ -27,7 +31,7 @@ export default function AvailablePets() {
                 {cats.map((cat) => (
                     <div key={cat.id}>
                         <img 
-                            src={cat.photos.length > 0 && cat.photos[0].small} 
+                            src={cat.photos.length > 0 && cat.photos[0].small ? cat.photos[0].small : 'PLACEHOLDER'} 
                             alt={cat.name} 
                             style={{ maxWidth: '100px'}} 
                         />
