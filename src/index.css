@@ -17,11 +17,15 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-height: 100vh;
   background-color: #FFF;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+#root{
+  width: 100%;
 }
