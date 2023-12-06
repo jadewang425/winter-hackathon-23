@@ -4,11 +4,11 @@ import { FaFacebook } from "react-icons/fa";
 
 export default function Footer () {
     return (
-        <div className="w-full flex justify-between p-5 bg-gray-300">
+        <div className="w-full flex justify-between p-5 bg-[#214038] text-white">
             <div className="mb-2 flex flex-col justify-between">
                 <div>
                     <div className="hover:underline"><Link to="about">About BARK</Link></div>
-                    <div className="hover:underline"><Link to="/contactus">Donate</Link></div>
+                    <div className="hover:underline"><Link to="/donate">Donate</Link></div>
                 </div>
                 <div className="flex mt-5">
                     <div className="pr-2">

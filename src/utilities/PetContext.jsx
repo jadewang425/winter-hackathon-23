@@ -5,10 +5,19 @@ const PetContext = createContext()
 
 export const PetProvider = ({children}) => {
     const [token, setToken] = useState(null);
+    const [homePets, setHomePets] = useState(null)
 
     useEffect(() => {
-        checkToken();
-    }, []);
+      const fetchData = async () => {
+        await checkToken();
+        if (token){
+          const data = await getPetByType('', '71301');
+          setHomePets(data)
+        }
+    };
+
+    fetchData();
+    }, [token]);
 
     const checkToken = async () => {
         const storedToken = localStorage.getItem("petfinderToken");
@@ -73,6 +82,7 @@ export const PetProvider = ({children}) => {
 
     const contextData = {
         token,
+        homePets,
         getPetByType,
         getPetById,
     };
