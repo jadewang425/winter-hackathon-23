@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ExpandableDropdown from '../components/ExpandableDropdown';
 
 const Resources = () => {
 
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-  };
 
   return (
     <div>
+      <p>Resources</p>
       <ExpandableDropdown title="Animal Rescue Help" content="lorem ipsum" />
       <ExpandableDropdown title="Animal Rescue Locations" content="lorem ipsum" />
       <ExpandableDropdown title="Spay & Neuter Locations" content="lorem ipsum" />
