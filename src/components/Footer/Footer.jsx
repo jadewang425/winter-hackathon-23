@@ -8,7 +8,7 @@ export default function Footer () {
             <div className="mb-2 flex flex-col justify-between">
                 <div>
                     <div className="hover:underline"><Link to="about">About BARK</Link></div>
-                    <div className="hover:underline"><Link to="/contactus">Donate</Link></div>
+                    <div className="hover:underline"><Link to="/donate">Donate</Link></div>
                 </div>
                 <div className="flex mt-5">
                     <div className="pr-2">

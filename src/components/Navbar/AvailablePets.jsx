@@ -3,45 +3,19 @@ import { useState, useEffect } from "react";
 import { usePet } from "../../utilities/PetContext"
 
 export default function AvailablePets() {
-    const { getPetByType } = usePet();
+    const { homePets } = usePet();
     const [dogs, setDogs] = useState([]);
     const [cats, setCats] = useState([]);
-    // const [error, setError] = useState("");
-    const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        async function getPets() {
-            try {
-                const petsByType = await getPetByType();
-                const pets = petsByType.slice(0,150)
-                setPets(pets)
-                const cats = pets.filter((pet) => pet.species === 'Cat')
-                setCats(cats)
-                console.log('CATS',cats)
-                const dogs = pets.filter((pet) => pet.species === 'Dog')
-                console.log('DOGS',dogs)
-                setDogs(dogs)
-                // if (pets.species === 'Dog') {
-                //     pets.push(dogs)
-                //     setDogs(dogs)
-                //     return setDogs.slice(0,30)
-                // } else if (pets.species === 'Cat'){
-                //     pets.push(cats)
-                //     setCats(cats)
-                //     return setCats.slice(0,30)
-                // }
-
-                // console.log(dogs);
-                console.log(pets)
-                
-            } catch (error) {
-                console.log("Error fetching pets:", error)
-                
-            }
-            
+        if (homePets) {
+            console.log(homePets)
+            const dogArray = homePets.filter(pet => pet.species === 'Dog');
+            setDogs(dogArray)
+            const catArray = homePets.filter(pet => pet.species === 'Cat');
+            setCats(catArray)
         }
-        getPets();
-    }, []);
+    }, [homePets]);
 
     return (
         <div className="w-full h-screen">
@@ -49,7 +23,7 @@ export default function AvailablePets() {
             <div className="flex gap-10 m-10 ">
             </div>
             {/* <div>
-                <h2>Available Dogs</h2>
+                <h2>Available cats</h2>
                 {dogs.map((dog) => (
                     <div key={dog.id}>
                         <img 
