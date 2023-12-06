@@ -11,7 +11,11 @@ const Resources = () => {
 
   return (
     <div>
-      <ExpandableDropdown title="Dropdown 1" content="Additional information for Dropdown 1 goes here." />    </div>
+      <ExpandableDropdown title="Animal Rescue Help" content="lorem ipsum" />
+      <ExpandableDropdown title="Animal Rescue Locations" content="lorem ipsum" />
+      <ExpandableDropdown title="Spay & Neuter Locations" content="lorem ipsum" />
+      <ExpandableDropdown title="Lost & Found" content="lorem ipsum" />
+    </div>
   );
 };
 

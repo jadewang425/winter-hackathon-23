@@ -11,7 +11,7 @@ const ExpandableDropdown = ({ title, content }) => {
   return (
     <div>
       <div onClick={handleToggle} style={{ cursor: 'pointer' }}>
-        {title} - Click to expand
+        {title}
       </div>
 
       {isExpanded && (
