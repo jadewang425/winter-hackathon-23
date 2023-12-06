@@ -9,13 +9,13 @@ const ExpandableDropdown = ({ title, children }) => {
   };
 
   return (
-    <div>
-      <div onClick={handleToggle} style={{ cursor: 'pointer' }}>
+    <div >
+      <div className='bg-gray-300 px-5 py-2 border-b-2 border-black font-bold' onClick={handleToggle} style={{ cursor: 'pointer' }}>
         {title}
       </div>
 
       {isExpanded && (
-        <div>
+        <div className='px-5 py-2'>
           {children}
         </div>
       )}
