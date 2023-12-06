@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ExpandableDropdown = ({ title, content }) => {
+const ExpandableDropdown = ({ title, children }) => {
 
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -16,7 +16,7 @@ const ExpandableDropdown = ({ title, content }) => {
 
       {isExpanded && (
         <div>
-          <p>{content}</p>
+          {children}
         </div>
       )}
     </div>
