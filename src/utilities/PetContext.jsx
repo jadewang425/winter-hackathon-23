@@ -42,20 +42,13 @@ export const PetProvider = ({children}) => {
 
     const getPetByType = async (petType, zipcode) => {
         try {
-          const response = await axios.get(
-            "https://api.petfinder.com/v2/animals",
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-              params: {
-                type: petType,
-                location: zipcode,
-              },
-            }
-          );
-    
-          return response.data.animals;
+          const response = await axios.post("http://localhost:8080/api/v1/pets", 
+          {
+            type: petType,
+            location: zipcode,
+            token: token
+          });
+          return response.data;
         } catch (error) {
           console.error("Error fetching animals:", error);
           return [];
@@ -64,15 +57,13 @@ export const PetProvider = ({children}) => {
 
     const getPetById = async (petId) => {
       try {
-        const response = await axios.get(
-          `https://api.petfinder.com/v2/animals/${petId}`,
+        const response = await axios.get(`http://localhost:8080/api/v1/pets/${petId}`,
           {
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: token,
             },
           }
         );
-  
         return response.data.animal;
       } catch (error) {
         console.error("Error fetching pet by ID:", error);
