@@ -1,20 +1,48 @@
-import React, { useRef } from 'react'
-import emailjs from 'emailjs'
+import React, { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 
 const AboutPage = () => {
 
-  const form = useRef()
-  const sendEmail = (e) => {
-    e.preventDefault();
-  }
+  useEffect(() => emailjs.init(import.meta.env.PUBLIC_KEY), [])
+  const emailRef = useRef();
+  const nameRef = useRef()
+  const [loading, setLoading] = useState(false);
 
-  emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PULIC_KEY)
-    .then((result) => {
-      console.log(result.text)
-    }, (error) => {
-      console.log(error.text)
-    })
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const serviceId = import.meta.env.SERVICE_ID;
+    const templateId = import.meta.env.TEMPLATE_ID;
+    try {
+      setLoading(true)
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: nameRef.current.value,
+          recipient: emailRef.current.value
+        });
+      alert("email successfully sent")
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+  // const form = useRef()
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  // }
+
+  // emailjs.sendForm(import.meta.env.SERVICE_ID, import.meta.env.TEMPLATE_ID, form.current, import.meta.env.PULIC_KEY)
+  //   .then((result) => {
+  //     console.log(result.text);
+  //   }, (error) => {
+  //     console.log(error.text);
+  //   });
+
+
+
 
   return (
     <div className='max-w-[100%] flex flex-col items-center' >
@@ -56,6 +84,18 @@ const AboutPage = () => {
           <h1>Contact Form</h1>
         </div>
       </div>
+
+
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input ref={nameRef} type="text" name="user_name" />
+        <label>Email</label>
+        <input ref={emailRef} type="email" name="user_email" />
+        <label>Message</label>
+        <textarea name="message" />
+        <button type="submit" value="Send"> Send </button>
+      </form>
+
       <div className='max-w-4xl w-full flex justify-center items-center p-5 my-5'>
         <div className="w-full flex flex-col justify-center items-center gap-5">
           <div className='flex flex-col justify-center gap-5 w-full min-[450px]:flex-row '>
