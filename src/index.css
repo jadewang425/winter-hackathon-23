@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* font-family: 'Poppins', sans-serif; */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
