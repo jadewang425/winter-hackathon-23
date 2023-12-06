@@ -4,7 +4,7 @@ export default function DonatePage () {
             <div className="font-bold p-3  bg-[#214038] text-white">Donate Today</div>
             <div className="mb-5 flex flex-col">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
-                <div className="w-[100px] bg-gray-300 rounded-full self-center">
+                <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
                     <button className="w-full justify-center font-bold" href="http://barkanimalrescue.org/Donate">DONATE</button>
                 </div>
             </div>

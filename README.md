@@ -16,7 +16,8 @@ Adoption page
 - Include Facebook page
 
 ### Next Steps
-- Display Facebook posts
+- Utilize Facebook API for latest Facebook posts
+- Utilize PayPal API for donation
 
 ## Technologies Used
 - React.js
