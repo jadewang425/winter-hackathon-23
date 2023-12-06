@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AvailablePets from "../components/Navbar/AvailablePets"
-import Facebook from "../components/Navbar/Facebook"
+import Facebook from "../components/Facebook/Facebook"
 import FullCarousel from "../components/FullCarousel/FullCarousel"
 
 const HomePage = () => {
