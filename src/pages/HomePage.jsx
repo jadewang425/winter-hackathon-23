@@ -6,7 +6,7 @@ import FullCarousel from "../components/FullCarousel/FullCarousel"
 const HomePage = () => {
   
   return (
-    <div className="App">
+    <div className="w-full flex flex-col justify-start items-center z-0 relative">
       <FullCarousel />
       <AvailablePets />
       <Facebook />

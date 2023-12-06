@@ -14,7 +14,7 @@ function App() {
 
   return (
     <PetProvider>
-      <main className='w-[100vw] min-h-[100vh] flex justify-center items-start pt-[90px]'>
+      <main className=' pt-[90px]'>
         <Navbar />
         <Routes>
           <Route 
