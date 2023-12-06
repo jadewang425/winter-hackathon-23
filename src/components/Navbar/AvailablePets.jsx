@@ -12,9 +12,9 @@ export default function AvailablePets() {
             console.log(homePets)
             const sortedPets = homePets.slice().sort((a,b) => new Date(a.published_at) - new Date(b.published_at))
             const dogs = sortedPets.filter(pet => pet.species === 'Dog');
-            setDogs(dogs)
+            setDogs(dogs.slice(0,3))
             const cats = sortedPets.filter(pet => pet.species === 'Cat');
-            setCats(cats)
+            setCats(cats.slice(0,3))
         }
     }, [homePets]);
 
