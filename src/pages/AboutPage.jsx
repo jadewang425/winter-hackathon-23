@@ -9,7 +9,7 @@ const AboutPage = () => {
     e.preventDefault();
   }
 
-  emailjs.sendForm('service id', 'template id', form.current, 'personal key')
+  emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PULIC_KEY)
     .then((result) => {
       console.log(result.text)
     }, (error) => {
