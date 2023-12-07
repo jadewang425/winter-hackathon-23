@@ -52,11 +52,13 @@ const SideBarMenu = ({setOpen}) => {
             <div onClick={(e) => e.stopPropagation()} className="bg-[#7F3F98] h-full w-[90vw] relative z-10 cursor-default px-5 py-2 flex flex-col justify-between">
                 <div className='flex flex-col mt-8'>
                     <div className='flex gap-3 justify-center items-center border-b border-[#F9F9F9] pb-5 mb-5'>
-                        <img src={BarkLogo} className='w-[50px] h-[50px]' alt="Logo" />
-                        <div className='flex flex-col gap-1'>
-                            <h1 className='text-[16px] text-[#F9F9F9] font-[600] font-[Poppins] leading-none'>BARK Animal Rescue</h1>
-                            <p className='text-[14px] text-[#F9F9F9] font-[Poppins] leading-none'>Menu</p>
-                        </div>
+                        <Link to="/" onClick={() => setOpen(false)}>
+                            <img src={BarkLogo} className='w-[50px] h-[50px]' alt="Logo" />
+                            <div className='flex flex-col gap-1'>
+                                <h1 className='text-[16px] text-[#F9F9F9] font-[600] font-[Poppins] leading-none'>BARK Animal Rescue</h1>
+                                <p className='text-[14px] text-[#F9F9F9] font-[Poppins] leading-none'>Menu</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className='flex flex-col gap-5 text-[#F9F9F9] font-[Poppins]'>
                         <Link to="/about" className='border-b border-[#F9F9F9] pb-5' onClick={() => setOpen(false)}>
