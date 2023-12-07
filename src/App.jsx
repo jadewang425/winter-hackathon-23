@@ -10,6 +10,7 @@ import Navbar from './components/Navbar/Navbar'
 import { PetProvider } from './utilities/PetContext'
 import Footer from './components/Footer/Footer'
 import Resources from './pages/Resources'
+import ContactUs from './pages/ContactUs'
 
 function App() {
 
