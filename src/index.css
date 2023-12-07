@@ -37,6 +37,7 @@ body {
   width: 100%;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
+.hide-scrollbar::-webkit-scrollbar,
+.hide-scrollbar::-webkit-scrollbar-horizontal {
   display: none;
 }

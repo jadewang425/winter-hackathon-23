@@ -10,7 +10,7 @@ const FullCarousel = () => {
     return (
         <div className="w-full">
             <Carousel
-                className="py-6"
+                className="pt-6"
                 autoPlay="true"
                 infiniteLoop="true"
                 showArrows="true"
@@ -19,26 +19,26 @@ const FullCarousel = () => {
                 interval={5000}
                 renderThumbs={(children) => []}
             >
-                <div class="flex flex-row">
+                <div class="flex flex-col">
                     {/* These current images are placeholders */}
-                    <img src={IMG1} alt="Image 1" class="basis-1/2" />
-                    <div class="basis-1/2">
-                        <h1>Meet Bernard</h1>
+                    <img src={IMG1} alt="Image 1" class="flex-1 px-6" />
+                    <div class="flex-1 text-left m-5">
+                        <h1 class="font-bold">Meet Bernard</h1>
                         <p>A three year old Bernese Mountain dog found his furever home in October, after being abandoned at the river last year.</p>
                     </div>
                 </div>
-                <div class="flex flex-row">
-                    <img src={IMG2} alt="Image 2" class="basis-1/2"/>
-                    <div class="basis-1/2">
-                        <h1>Puppy Litter</h1>
+                <div class="flex flex-col">
+                    <img src={IMG2} alt="Image 2" class="flex-1 rounded-lg px-6"/>
+                    <div class="flex-1 text-left m-5">
+                        <h1 class="font-bold">Puppy Litter</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae, asperiores assumenda repellendus neque?</p>
                     </div>
                 </div>
-                <div class="flex flex-row">
+                <div class="flex flex-col">
                     {/* These current images are placeholders */}
-                    <img src={IMG3} alt="Image 3" class="basis-1/2" />
-                    <div class="basis-1/2">
-                        <h1>Kitten</h1>
+                    <img src={IMG3} alt="Image 3" class="flex-1 rounded-lg px-6" />
+                    <div class="flex-1 text-left m-5">
+                        <h1 class="font-bold">Kitten</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae, asperiores assumenda repellendus neque?</p>
                     </div>
                 </div>
