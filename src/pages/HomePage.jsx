@@ -11,7 +11,12 @@ const HomePage = () => {
       <Mission />
       <AvailablePets />
       <Facebook />
-      <div className="p-5 self-start">If you have any question, please contact us <a href="/about" className="font-bold text-[#7F3F98]">Here</a>!</div>
+      <div className="w-full p-5 max-w-xs flex justify-center">
+        <div className="text-center">
+          If you have any question, please contact us{' '}
+          <a href="/about" className="font-bold text-[#7F3F98]">Here</a>!
+        </div>
+      </div>
     </div>
   )
 }
