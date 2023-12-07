@@ -11,7 +11,7 @@ const ExpandableDropdown = ({ title, children }) => {
 
   return (
     <div >
-      <div className='bg-gray-300 px-5 py-2 border-b-2 border-black font-bold flex justify-between' onClick={handleToggle} style={{ cursor: 'pointer' }}>
+      <div className='bg-[#214038]/80 px-5 py-2 border-b-2 border-[#f9f9f9] text-white font-bold flex justify-between' onClick={handleToggle} style={{ cursor: 'pointer' }}>
         {title}
         <img src={Arrow} />
         {/* className='origin-center rotate-180'  */}

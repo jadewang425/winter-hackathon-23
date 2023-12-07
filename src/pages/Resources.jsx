@@ -1,12 +1,13 @@
 import React from 'react'
 import ExpandableDropdown from '../components/ExpandableDropdown';
+import SectionHeader from '../components/SectionHeader';
 
 const Resources = () => {
 
 
   return (
     <div >
-      <div className='bg-gray-300 my-4 px-5 py-2 font-bold'>Resources</div>
+      <SectionHeader title='Resources' />
 
       <div className=''>
 
@@ -89,7 +90,7 @@ const Resources = () => {
         </ExpandableDropdown>
 
         <ExpandableDropdown title="Spay & Neuter Locations">
-          <div className='flex flex-col gap-10'>
+          <div className='flex flex-col gap-9'>
 
             <div>
               Low Cost Spay Neuter Opinions:
