@@ -9,7 +9,7 @@ export default function DonatePage() {
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
                 <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
                     <button className="w-full justify-center font-bold">
-                        <a target='_blank' href='https://www.paypal.com/donate?token=yRV7drz_9PYdQxKOxXuXVIsaV9cywK007ohG9wJLm8ZC8-xfmZvl_45dR_UrHlhgbdTJ6r71zTDJzhTk'>
+                        <a target='_blank' href='http://barkanimalrescue.org/Donate'>
                             DONATE
                         </a>
                     </button>

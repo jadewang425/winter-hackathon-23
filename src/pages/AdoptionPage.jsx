@@ -129,7 +129,7 @@ const PetCard = ({ pet }) => {
     <Link to={`/adoption/${pet.id}`}>
       <div className="w-[200px] h-[250px] relative overflow-hidden">
         <img
-          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
+          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].full : placeholder}
           alt={pet.name}
           className="w-[100%] h-[100%] object-cover object-center rounded-xl"
         />
