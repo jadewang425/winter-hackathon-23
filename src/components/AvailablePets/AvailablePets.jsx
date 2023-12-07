@@ -57,13 +57,13 @@ export default function AvailablePets() {
 const PetCard = ({pet}) => {
     return (
         <div key={pet.id} className="flex flex-col items-left pb-4">
-            <img
-                src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
-                alt={pet.name}
-                style={{ maxWidth: '110px', borderRadius: '16px' }}
-                className="object-cover object-center"
-            />
             <Link to={`/adoption/${pet.id}`} className="font-Poppins font-normal text-16 pt-3 text-left">
+                <img
+                    src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
+                    alt={pet.name}
+                    style={{ width: '110px', height: '85px', borderRadius: '16px' }}
+                    className="object-cover object-center"
+                />
                 <p>{pet.name},</p> <p>{pet.age}</p>
             </Link>
         </div>
