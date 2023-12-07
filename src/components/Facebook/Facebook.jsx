@@ -17,7 +17,7 @@ export default function Facebook () {
             </div>
 
             <div className="flex justify-center px-5">
-                <FacebookEmbed url="https://www.facebook.com/barkanimalrescue/posts/pfbid02CqS4KVLoyYmnuXfkGCFcs1PzLgcD3Ye5DA3pYjfpuU32RX1AdiPCNVYaDekFFkVJl" width={550} />
+                <FacebookEmbed url="https://www.facebook.com/barkanimalrescue/posts/pfbid02CqS4KVLoyYmnuXfkGCFcs1PzLgcD3Ye5DA3pYjfpuU32RX1AdiPCNVYaDekFFkVJl" width={380} />
             </div>
         </div>
     )
