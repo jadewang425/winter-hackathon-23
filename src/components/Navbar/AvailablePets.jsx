@@ -27,8 +27,8 @@ export default function AvailablePets() {
         <div className="w-full h-screen">
             <div className="flex gap-10 m-10 ">
             </div>
-            <div className="flex flex-col gap-6 m-4">
-                <h2 className="w-full text-center font-Poppins font-semibold text-16">Available Cats</h2>
+            <div className="flex flex-col gap-1 m-4">
+                <h2 className="w-full text-left font-Poppins font-semibold text-16 pl-4">Available Cats</h2>
                 <div className="flex flex-row gap-6 m-4">
                     {cats.map((cat) => (
                         <div key={cat.id} className="flex flex-col items-left">
@@ -46,10 +46,10 @@ export default function AvailablePets() {
                 </div>
 
             </div>
-            <div className="flex gap-10 m-10 ">
+            <div className="flex gap-10 m-5 ">
             </div>
-            <div className="flex flex-col gap-6 m-4">
-                <h2 className="w-full text-center font-Poppins font-semibold text-16">Available Dogs</h2>
+            <div className="flex flex-col gap-1 m-4">
+                <h2 className="w-full text-left font-Poppins font-semibold text-16 pl-4">Available Dogs</h2>
                 <div className="flex flex-row gap-6 m-4">
                     {dogs.map((dog) => (
                         <div key={dog.id} className="flex flex-col items-left">
