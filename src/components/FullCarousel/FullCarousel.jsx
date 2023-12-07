@@ -15,7 +15,6 @@ const FullCarousel = () => {
                 showThumbs={false}
                 showStatus={false}
                 interval={5000}
-                // renderThumbs={(children) => []}
                 renderIndicator={(clickHandler, isSelected, index, label) => {
                     const defaultStyles = {
                         background: isSelected ? '#E5BC01' : '#7F3F98',
@@ -52,21 +51,24 @@ const FullCarousel = () => {
                     <img src={IMG1} alt="Image 1" className="flex-1 sm:w-1/2 px-6 max-h-[300px]" />
                     <div className="flex-1 text-left m-5">
                         <h1 className="font-bold">Meet Bernard</h1>
-                        <p>A three year old Bernese Mountain dog found his furever home in October, after being abandoned at the river last year.</p>
+                        <p>A three year old rescue pup found his furever home, after being abandoned at the river</p>
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row">
                     <img src={IMG2} alt="Image 2" className="flex-1 sm:w-1/2 px-6 max-h-[300px]" />
                     <div className="flex-1 text-left m-5">
-                        <h1 className="font-bold">Puppy Litter</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae, asperiores assumenda repellendus neque?</p>
+                        <h1 className="font-bold">Meet Tofu</h1>
+                        <p>Tofu was found in a dumpster in June. In July she was adopted by her new family!</p>
                     </div>
                 </div>
-                <div className="flex flex-col sm:flex-row">
+                <div className="flex flex-col sm:flex-row pb-6">
                     <img src={IMG3} alt="Image 3" className="flex-1 sm:w-1/2 px-6 max-h-[300px]" />
                     <div className="flex-1 text-left m-5">
-                        <h1 className="font-bold">Kitten</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae, asperiores assumenda repellendus neque?</p>
+                        <h1 className="font-bold">Adoption Event</h1>
+                        <p>Sunday, January 13th</p> 
+                        <p>10am-2pm</p> 
+                        <p>Kees Park</p> 
+                        <p>Cats & Dogs Available</p>
                     </div>
                 </div>
             </Carousel>
