@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePet } from "../utilities/PetContext";
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import { BsDownload } from "react-icons/bs";
 import BarkLogo from '../assets/BarkLogo.svg'
 import PetLogo from '../assets/petfinderlogo.png'
-import { motion } from "framer-motion";
 import StaggeredDropDown from "../components/OptionsDropDown";
+import placeholder from '../assets/imgHolder.svg'
 
 const AdoptionPage = () => {
   const { getPetByType } = usePet();
@@ -27,16 +27,11 @@ const AdoptionPage = () => {
       setError("");
       const petsByType = await getPetByType(petType, zipcode, gender, age, size);
       console.log(petsByType)
-      // setPets(petsByType);
+      setPets(petsByType.filter((pet) => pet.photos.length > 0));
     } catch (error) {
       console.error("Error fetching pets:", error);
       setError("Error fetching pets. Please try again.");
     }
-    // console.log('zip', zipcode)
-    // console.log('petType', petType)
-    // console.log('gender', gender)
-    // console.log('age', age)
-    // console.log('size', size)
   };
 
 
@@ -77,7 +72,14 @@ const AdoptionPage = () => {
             Apply
           </button>
           {error && <p>{error}</p>}
-        </div>
+          {pets && (
+            <div className="w-full flex flex-col justify-start items-center gap-8 mt-5">
+              {pets.map((pet) => (
+                <PetCard key={pet.id} pet={pet} />
+              ))}
+            </div>
+          )}
+          </div>
       </div>
       <SectionHeader title='Adopt a Pet' />
       <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-5">
@@ -108,3 +110,24 @@ const AdoptionPage = () => {
 };
 
 export default AdoptionPage;
+
+const PetCard = ({ pet }) => {
+
+  return (
+    <Link to={`/adoption/${pet.id}`}>
+      <div className="w-[200px] h-[250px] relative overflow-hidden">
+        <img
+          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
+          alt={pet.name}
+          className="w-[100%] h-[100%] object-cover object-center rounded-xl"
+        />
+        <div className="bg-white absolute w-full bottom-0 left-0 h-16 px-4 rounded-b-xl flex justify-center items-center tracking-[.018em] text-[#7F3F98]">
+          <h1 className="overflow-hidden whitespace-nowrap overflow-ellipsis">{pet.name}</h1>
+        </div>
+        <div className="bg-[#7F3F98] absolute  bottom-12 left-0 flex justify-center items-center tracking-[.018em] text-white">
+          <h1 className="py-2 px-3">Available</h1>
+        </div>
+      </div>
+    </Link>
+  );
+};
