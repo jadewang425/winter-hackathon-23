@@ -40,8 +40,8 @@ const AboutPage = () => {
       </div>
       <SectionHeader title='Find Us' />
       <div className='max-w-6xl w-full flex flex-col justify-start gap-5 items-start sm:items-center sm:flex-row p-5 my-5'>
-        <div className='flex justify-center items-center h-[15rem] w-full bg-slate-400 sm:w-5/12 sm:h-[18rem] rounded-lg'>
-          map placeholder
+        <div className="w-full self-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109097.2177962001!2d-92.56474763701927!3d31.295782648889503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86254d49e9ffcce3%3A0xc1e65dd9e413f7ff!2sAlexandria%2C%20LA!5e0!3m2!1sen!2sus!4v1701933661147!5m2!1sen!2sus" width="100%" height="250" style={{border:'0', borderRadius: '10px'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div className='flex-1 flex flex-col gap-[16px]'>
           <p className="font-[Poppins]">Located in Alexandria, LA</p>
