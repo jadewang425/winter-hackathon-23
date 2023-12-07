@@ -10,6 +10,7 @@ import Navbar from './components/Navbar/Navbar'
 import { PetProvider } from './utilities/PetContext'
 import Footer from './components/Footer/Footer'
 import Resources from './pages/Resources'
+import ContactUs from './pages/ContactUs'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/adoption" element={<AdoptionPage />} />
           <Route path='/adoption/:id' element={<PetDetailPage />} />
           <Route path='/resources' element={<Resources />} />
+          <Route path='/contactUs' element={<ContactUs />} />
         </Routes>
       </main>
       <Footer />
