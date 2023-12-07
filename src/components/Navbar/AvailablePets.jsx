@@ -66,9 +66,11 @@ export default function AvailablePets() {
                     ))}
 
                 </div>
+                <Link to={`/adoption`}>
+                    <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl mx-3 my-2"> View All</button>
+                </Link>
 
             </div>
-            <button type="submit"> View All</button>
             
             
         </div>
