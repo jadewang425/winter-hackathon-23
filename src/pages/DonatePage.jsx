@@ -3,13 +3,13 @@ import ExpandableDropdown from '../components/ExpandableDropdown';
 
 export default function DonatePage() {
     return (
-        <div className="w-full flex-col justify-center">
+        <div className="w-full flex-col justify-center pt-2">
             <SectionHeader title="Donate Today" />
             <div className="mb-5 flex flex-col">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
                 <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
                     <button className="w-full justify-center font-bold">
-                        <a target='_blank' href='https://www.paypal.com/donate?token=yRV7drz_9PYdQxKOxXuXVIsaV9cywK007ohG9wJLm8ZC8-xfmZvl_45dR_UrHlhgbdTJ6r71zTDJzhTk'>
+                        <a target='_blank' href='http://barkanimalrescue.org/Donate'>
                             DONATE
                         </a>
                     </button>

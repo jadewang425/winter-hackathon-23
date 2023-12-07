@@ -65,7 +65,7 @@ const PetDetailPage = () => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <SectionHeader title={pet.name}/>
+      <SectionHeader title={pet.name} />
       <div className='flex items-center w-[380px] text-left leading-4 mt-10'>
         <img src={arrow} alt="arrow" className="transform rotate-90 mr-2 w-4 h-4" />
 
@@ -113,40 +113,40 @@ const PetDetailPage = () => {
       </div>
       <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-5">
         <p className="text-left sm:text-center">
-            If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
-              <a href="mailto:longj1003@aol.com">
-                <span className='border-b border-gray-500 hover:border-black transition'>
-                  LongJ1003@aol.com
-                </span>
-              </a>
-              {' '}when complete.
+          If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
+          <a href="mailto:longj1003@aol.com">
+            <span className='border-b border-gray-500 hover:border-black transition'>
+              LongJ1003@aol.com
+            </span>
+          </a>
+          {' '}when complete.
         </p>
         <div className="flex flex-col min-[450px]:flex-row-reverse gap-10 justify-center items-center">
           <div className="flex flex-col justify-center items-center gap-2 flex-1">
             <img src={BarkLogo} className='w-auto h-32 py-2' alt="Logo" />
             <p className="text-center">
-                Find your new best friend today!
+              Find your new best friend today!
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5 flex-1">
             {pet.species === 'Cat' ? (
               <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Feline Application <BsDownload /></button>
-            ): pet.species === 'Dog' ? (
+            ) : pet.species === 'Dog' ? (
               <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Canine Application <BsDownload /></button>
-            ): null }
+            ) : null}
 
           </div>
 
         </div>
-        
+
 
       </div>
-      
-      
+
+
 
     </div>
-    
-    
+
+
   );
 };
 

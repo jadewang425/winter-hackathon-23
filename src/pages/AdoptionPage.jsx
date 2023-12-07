@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePet } from "../utilities/PetContext";
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
@@ -7,6 +7,8 @@ import BarkLogo from '../assets/BarkLogo.svg'
 import PetLogo from '../assets/petfinderlogo.png'
 import StaggeredDropDown from "../components/OptionsDropDown";
 import placeholder from '../assets/imgHolder.svg'
+import canineFile from '../assets/barkadoptionformcanine.pdf'
+import felineFile from '../assets/barkadoptionformfeline.pdf'
 
 
 const AdoptionPage = () => {
@@ -28,7 +30,12 @@ const AdoptionPage = () => {
       setError("");
       const petsByType = await getPetByType(petType, zipcode, gender, age, size);
       console.log(petsByType)
-      setPets(petsByType.filter((pet) => pet.photos.length > 0));
+      const filteredPets = petsByType.filter((pet) => pet.photos.length > 0)
+      if (filteredPets.length === 0 ) {
+        setPets(petsByType);
+      } else {
+        setPets(filteredPets)
+      }
     } catch (error) {
       console.error("Error fetching pets:", error);
       setError("Error fetching pets. Please try again.");
@@ -38,7 +45,7 @@ const AdoptionPage = () => {
 
 
   return (
-    <div className='max-w-[100%] flex flex-col items-center pt-5 font-[Poppins]'>
+    <div className='max-w-[100%] flex flex-col items-center pt-2 font-[Poppins]'>
       <SectionHeader title='Find a Pet' />
       <div className="max-w-6xl  w-full flex flex-col gap-[20px] my-7 px-5">
         <h1 className="font-semibold text-[rgb(18,18,18)]  ml-1 "> Find your new best friend today! </h1>
@@ -74,10 +81,12 @@ const AdoptionPage = () => {
           </button>
           {error && <p>{error}</p>}
           {pets && (
-            <div className="w-full flex flex-col justify-start items-center gap-8 mt-5">
+
+            <div className="w-full flex flex-wrap justify-center items-center gap-8 mt-5">
               {pets.map((pet) => (
                 <PetCard key={pet.id} pet={pet} />
               ))}
+
             </div>
           )}
         </div>
@@ -101,18 +110,15 @@ const AdoptionPage = () => {
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5 flex-1">
-            <a href="../assets/barkadoptionformcanine.doc" download>
-              <button
-                className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]"
-              >
+            <a href={canineFile} target="_blank" rel="noopener noreferrer">
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">
                 Canine Application <BsDownload />
               </button>
             </a>
-            <a href="../assets/barkadoptionformcanine.doc" download>
-              <button
-                className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]"
-                href="../assets/barkadoptionform.feline.doc" download>
-                Feline Application <BsDownload /></button>
+            <a href={felineFile} target="_blank" rel="noopener noreferrer">
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">
+                Feline Application <BsDownload />
+              </button>
             </a>
           </div>
         </div>
@@ -124,12 +130,15 @@ const AdoptionPage = () => {
 export default AdoptionPage;
 
 const PetCard = ({ pet }) => {
+  const lastKeyOfFirstPhotoArray = pet.photos?.[0] ? Object.keys(pet.photos[0]).pop() : null;
+  const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
 
   return (
     <Link to={`/adoption/${pet.id}`}>
-      <div className="w-[200px] h-[250px] relative overflow-hidden">
+      <div className="w-[220px] sm:w-[300px] sm:h-[350px] h-[250px] relative overflow-hidden">
         <img
-          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
+          src={lastPhotoUrl}
+          // src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
           alt={pet.name}
           className="w-[100%] h-[100%] object-cover object-center rounded-xl"
         />
