@@ -67,7 +67,7 @@ const ContactUs = () => {
       <SectionHeader title='Contact Form' />
 
       <div className='max-w-4xl w-full flex justify-center items-center p-5 my-5 font-[Poppins]'>
-        <form onSubmit={handleSubmit}>
+        <form className="w-full flex flex-col justify-center items-center gap-5" onSubmit={handleSubmit}>
           <div className="w-full flex flex-col justify-center items-center gap-5">
             <div className='flex flex-col justify-center gap-5 w-full min-[450px]:flex-row '>
               <input type="text" className="border-b-2 border-red bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="First Name" ref={firstNameRef} />
