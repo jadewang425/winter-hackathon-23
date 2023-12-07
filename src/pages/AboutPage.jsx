@@ -8,7 +8,7 @@ const AboutPage = () => {
 
 
   return (
-    <div className='max-w-[100%] flex flex-col items-center pt-5' >
+    <div className='max-w-[100%] flex flex-col items-center pt-2' >
       <SectionHeader title='About BARK' />
       <div className="max-w-6xl flex flex-col gap-5 my-7">
         <div className='flex flex-col justify-start items-start gap-5 px-5 '>
