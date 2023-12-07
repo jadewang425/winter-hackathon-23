@@ -6,6 +6,7 @@ import SectionHeader from "../components/SectionHeader";
 import BarkLogo from '../assets/BarkLogo.svg'
 import arrow from '../assets/arrow.svg'
 import { BsDownload } from "react-icons/bs";
+import { Carousel } from 'react-responsive-carousel';
 
 const PetDetailPage = () => {
   const { id } = useParams();
@@ -50,7 +51,17 @@ const PetDetailPage = () => {
     }
   }
 
-  console.log(pet)
+  // console.log(pet)
+
+  const petPhotos = pet.photos.map((photo) => (
+    <div className="w-[100%] flex flex-col sm:flex-row justify-c">
+      <img
+        src={photo.medium}
+        alt={pet.name}
+        className="max-h-[250px] object-contain object-center rounded-md"
+      />
+    </div>
+  ))
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
@@ -60,15 +71,21 @@ const PetDetailPage = () => {
 
         <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
       </div>
-      <div className="w-[302px] h-[250px] relative overflow-hidden mt-7">
-        {/* placeholder for carousel images */}
-        <img
-          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].full : placeholder}
-          alt={pet.name}
-          className="w-[100%] h-[100%] object-cover object-center rounded-xl"
-        />
+      <div className="w-full flex relative overflow-hidden mt-7">
+        <Carousel
+                className="pt-6 mb-0 sm:mb-5 text-center"
+                autoPlay
+                infiniteLoop
+                showArrows
+                showThumbs={true}
+                showIndicators={false}
+                showStatus={false}
+                interval={5000}
+        >
+          { petPhotos }
+        </Carousel>
       </div>
-      <div className=' w-[302px] text-left leading-8 mt-10'>
+      <div className=' w-[302px] text-left leading-8 mt-5'>
         <p> <strong>Name:</strong> {pet.name}</p>
         <p> <strong>Age:</strong> {pet.age}</p>
         <p> <strong>Breed:</strong> {pet.breeds.primary}</p>

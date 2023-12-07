@@ -1,4 +1,4 @@
-import AvailablePets from "../components/Navbar/AvailablePets"
+import AvailablePets from "../components/AvailablePets/AvailablePets"
 import Facebook from "../components/Facebook/Facebook"
 import FullCarousel from "../components/FullCarousel/FullCarousel"
 import Mission from "../components/Mission/Mission";
