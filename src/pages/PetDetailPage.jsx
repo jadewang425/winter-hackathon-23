@@ -34,6 +34,14 @@ const PetDetailPage = () => {
         return value ? 'Shots Up to Date: Yes' : 'Shots Up to Date: No'
       case 'special_needs':
         return value ? 'Special Needs: Yes' : 'Special Needs: No'
+      case 'cats':
+        return value != null ? (value ? 'Cats: Yes' : 'Cats: No') : 'Cats: Unknown';
+      case 'children':
+        return value != null ? (value ? 'Children: Yes' : 'Children: No') : 'Children: Unknown';
+      case 'dogs':
+        return value != null ? (value ? 'Dogs: Yes' : 'Dogs: No') : 'Dogs: Unknown';
+      // default:
+      //   return value != null ? value.toString() : ': Unknown';
     }
   }
 
@@ -65,7 +73,12 @@ const PetDetailPage = () => {
         <ul>
           {Object.entries(pet.attributes).map(([key, value]) => (
             <li key={key}> {renameValue(key, value)} </li>
-
+          ))}
+        </ul>
+        <p>Environment:</p>
+        <ul>
+          {Object.entries(pet.environment).map(([key, value]) => (
+            <li key={key}> {renameValue(key, value)} </li>
           ))}
         </ul>
         {/* add tags pet.tags (Array) */}
