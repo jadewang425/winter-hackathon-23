@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { usePet } from '../utilities/PetContext';
 import placeholder from '../assets/imgHolder.svg'
+import SectionHeader from "../components/SectionHeader";
+import BarkLogo from '../assets/BarkLogo.svg'
+import { BsDownload } from "react-icons/bs";
+
 
 const PetDetailPage = () => {
   const { id } = useParams();
@@ -48,8 +52,9 @@ const PetDetailPage = () => {
   console.log(pet)
 
   return (
-    <div className="w-full flex flex-col mt-8 justify-center items-center">
-      <div className="w-[302px] h-[250px] relative overflow-hidden">
+    <div className="w-full flex flex-col justify-center items-center">
+      <SectionHeader title={pet.name}/>
+      <div className="w-[302px] h-[250px] relative overflow-hidden mt-7">
         {/* placeholder for carousel images */}
         <img
           src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
@@ -77,11 +82,43 @@ const PetDetailPage = () => {
             <li key={key}> {renameValue(key, value)} </li>
           ))}
         </ul>
-        {/* add tags pet.tags (Array) */}
 
       </div>
-      {/* {/* add a carousel of other photos of amelia */}
+      <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-5">
+        <p className="text-left sm:text-center">
+            If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
+              <a href="mailto:longj1003@aol.com">
+                <span className='border-b border-gray-500 hover:border-black transition'>
+                  LongJ1003@aol.com
+                </span>
+              </a>
+              {' '}when complete.
+        </p>
+        <div className="flex flex-col min-[450px]:flex-row-reverse gap-10 justify-center items-center">
+          <div className="flex flex-col justify-center items-center gap-2 flex-1">
+            <img src={BarkLogo} className='w-auto h-32 py-2' alt="Logo" />
+            <p className="text-center">
+                Find your new best friend today!
+            </p>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-5 flex-1">
+            {pet.species === 'Cat' ? (
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Feline Application <BsDownload /></button>
+            ): pet.species === 'Dog' ? (
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Canine Application <BsDownload /></button>
+            ): null }
+
+          </div>
+
+        </div>
+        
+
+      </div>
+      
+      
+
     </div>
+    
     
   );
 };
