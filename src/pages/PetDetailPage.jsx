@@ -22,14 +22,20 @@ const PetDetailPage = () => {
     return <div>Loading...</div>;
   }
 
-  // const renameValue = (key, value) => {
-  //   switch (key) {
-  //     case 'declawed':
-  //       return value ? 
-  //     case 'spayed_neutered':
-  //       return value ? 'Spayed / Neutered' : 'Not Spayed / Neutered'
-  //   }
-  // }
+  const renameValue = (key, value) => {
+    switch (key) {
+      case 'declawed':
+        return value ? 'Declawed: Yes' : 'Declawed: No'
+      case 'spayed_neutered':
+        return value ? 'Spayed / Neutered: : Yes' : 'Spayed / Neutered: No'
+      case 'house_trained':
+        return value ? 'House Trained: Yes' : 'House Trained: No'
+      case 'shots_current':
+        return value ? 'Shots Up to Date: Yes' : 'Shots Up to Date: No'
+      case 'special_needs':
+        return value ? 'Special Needs: Yes' : 'Special Needs: No'
+    }
+  }
 
   console.log(pet)
 
@@ -56,16 +62,16 @@ const PetDetailPage = () => {
         <p>Gender: {pet.gender}</p>
         <p>Colors: {pet.colors.primary}</p>
         <p>Attributes:</p>
-        {/* <ul>
+        <ul>
           {Object.entries(pet.attributes).map(([key, value]) => (
             <li key={key}> {renameValue(key, value)} </li>
 
           ))}
-        </ul> */}
+        </ul>
         {/* add tags pet.tags (Array) */}
 
       </div>
-      {/* add a carousel of other photos of amelia */}
+      {/* {/* add a carousel of other photos of amelia */}
     </div>
     
   );
