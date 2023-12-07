@@ -71,17 +71,21 @@ const PetDetailPage = () => {
         <p> <strong>Background:</strong> {pet.description}</p>
         <p> <strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
         <p> <strong>Attributes:</strong></p>
-        <ul>
-          {Object.entries(pet.attributes).map(([key, value]) => (
-            <li key={key}> {renameValue(key, value)} </li>
-          ))}
-        </ul>
+        <div className="px-5" >
+          <ul className='list-disc'>
+            {Object.entries(pet.attributes).map(([key, value]) => (
+              <li key={key}> {renameValue(key, value)} </li>
+            ))}
+          </ul>
+        </div>
         <p> <strong>Environment:</strong></p>
-        <ul>
-          {Object.entries(pet.environment).map(([key, value]) => (
-            <li key={key}> {renameValue(key, value)} </li>
-          ))}
-        </ul>
+        <div className="px-5">
+          <ul className='list-disc'>
+            {Object.entries(pet.environment).map(([key, value]) => (
+              <li key={key}> {renameValue(key, value)} </li>
+            ))}
+          </ul>
+        </div>
 
       </div>
       <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-5">
