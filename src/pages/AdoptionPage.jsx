@@ -19,24 +19,24 @@ const AdoptionPage = () => {
   const [error, setError] = useState("");
 
   const handleButtonClick = async () => {
-    // if (isNaN(zipcode) || zipcode === "") {
-    //   setError("Please enter a valid zipcode.");
-    //   return;
-    // }
-    // try {
-    //   setError("");
-    //   const petsByType = await getPetByType(animalType, zipcode);
-    //   console.log(petsByType)
-    //   setPets(petsByType);
-    // } catch (error) {
-    //   console.error("Error fetching pets:", error);
-    //   setError("Error fetching pets. Please try again.");
-    // }
-    console.log('zip', zipcode)
-    console.log('petType', petType)
-    console.log('gender', gender)
-    console.log('age', age)
-    console.log('size', size)
+    if (isNaN(zipcode) || zipcode === "") {
+      setError("Please enter a valid zipcode.");
+      return;
+    }
+    try {
+      setError("");
+      const petsByType = await getPetByType(petType, zipcode, gender, age, size);
+      console.log(petsByType)
+      // setPets(petsByType);
+    } catch (error) {
+      console.error("Error fetching pets:", error);
+      setError("Error fetching pets. Please try again.");
+    }
+    // console.log('zip', zipcode)
+    // console.log('petType', petType)
+    // console.log('gender', gender)
+    // console.log('age', age)
+    // console.log('size', size)
   };
 
 
@@ -76,6 +76,7 @@ const AdoptionPage = () => {
           <button onClick={handleButtonClick} className="bg-[#E5BC01] mt-4 text-[#214038] hover:bg-[#f8d36d] py-[10px] px-[30px]  rounded-full focus:outline-none focus:shadow-outline-green active:bg-green-700">
             Apply
           </button>
+          {error && <p>{error}</p>}
         </div>
       </div>
       <SectionHeader title='Adopt a Pet' />

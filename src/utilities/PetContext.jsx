@@ -49,12 +49,15 @@ export const PetProvider = ({children}) => {
         }
     };
 
-    const getPetByType = async (petType, zipcode) => {
+    const getPetByType = async (petType, zipcode, gender, age, size) => {
         try {
           const response = await axios.post("http://localhost:8080/api/v1/pets", 
           {
             type: petType,
             location: zipcode,
+            gender,
+            age,
+            size,
             token: token
           });
           return response.data;
