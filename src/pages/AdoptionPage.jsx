@@ -38,7 +38,7 @@ const AdoptionPage = () => {
 
 
   return (
-    <div className='max-w-[100%] flex flex-col items-center pt-5 font-[Poppins]'>
+    <div className='max-w-[100%] flex flex-col items-center pt-2 font-[Poppins]'>
       <SectionHeader title='Find a Pet' />
       <div className="max-w-6xl  w-full flex flex-col gap-[20px] my-7 px-5">
         <h1 className="font-semibold text-[rgb(18,18,18)]  ml-1 "> Find your new best friend today! </h1>
