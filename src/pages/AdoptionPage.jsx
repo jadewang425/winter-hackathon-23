@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePet } from "../utilities/PetContext";
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
@@ -28,7 +28,12 @@ const AdoptionPage = () => {
       setError("");
       const petsByType = await getPetByType(petType, zipcode, gender, age, size);
       console.log(petsByType)
-      setPets(petsByType.filter((pet) => pet.photos.length > 0));
+      const filteredPets = petsByType.filter((pet) => pet.photos.length > 0)
+      if (filteredPets.length === 0 ) {
+        setPets(petsByType);
+      } else {
+        setPets(filteredPets)
+      }
     } catch (error) {
       console.error("Error fetching pets:", error);
       setError("Error fetching pets. Please try again.");
@@ -124,12 +129,15 @@ const AdoptionPage = () => {
 export default AdoptionPage;
 
 const PetCard = ({ pet }) => {
+  const lastKeyOfFirstPhotoArray = pet.photos?.[0] ? Object.keys(pet.photos[0]).pop() : null;
+  const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
 
   return (
     <Link to={`/adoption/${pet.id}`}>
-      <div className="w-[200px] h-[250px] relative overflow-hidden">
+      <div className="w-[220px] h-[250px] relative overflow-hidden">
         <img
-          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
+          src={lastPhotoUrl}
+          // src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
           alt={pet.name}
           className="w-[100%] h-[100%] object-cover object-center rounded-xl"
         />
