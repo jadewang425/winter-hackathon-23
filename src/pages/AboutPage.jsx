@@ -37,19 +37,6 @@ const AboutPage = () => {
       setLoading(false);
     }
   }
-  // const form = useRef()
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  // }
-
-  // emailjs.sendForm(import.meta.env.SERVICE_ID, import.meta.env.TEMPLATE_ID, form.current, import.meta.env.PULIC_KEY)
-  //   .then((result) => {
-  //     console.log(result.text);
-  //   }, (error) => {
-  //     console.log(error.text);
-  //   });
-
-
 
 
   return (
@@ -113,19 +100,6 @@ const AboutPage = () => {
 
 
       <SectionHeader title='Contact Form' />
-
-
-      {/* <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input ref={nameRef} type="text" name="user_name" />
-        <label>Email</label>
-        <input ref={emailRef} type="email" name="user_email" />
-        <label>Message</label>
-        <input ref={numberRef} type='phone number' name='user_phone_number' />
-        <label>Phone Number</label>
-        <textarea ref={messageRef} name="message" />
-        <button type="submit" value="Send"> Send </button>
-      </form> */}
 
       <div className='max-w-4xl w-full flex justify-center items-center p-5 my-5 font-[Poppins]'>
         <form onSubmit={handleSubmit}>
