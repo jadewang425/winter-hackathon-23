@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { usePet } from '../utilities/PetContext';
 import placeholder from '../assets/imgHolder.svg'
+import SectionHeader from "../components/SectionHeader";
+import BarkLogo from '../assets/BarkLogo.svg'
+import { BsDownload } from "react-icons/bs";
+
 
 const PetDetailPage = () => {
   const { id } = useParams();
@@ -22,51 +26,103 @@ const PetDetailPage = () => {
     return <div>Loading...</div>;
   }
 
-  // const renameValue = (key, value) => {
-  //   switch (key) {
-  //     case 'declawed':
-  //       return value ? 
-  //     case 'spayed_neutered':
-  //       return value ? 'Spayed / Neutered' : 'Not Spayed / Neutered'
-  //   }
-  // }
+  const renameValue = (key, value) => {
+    switch (key) {
+      case 'declawed':
+        return value ? 'Declawed: Yes' : 'Declawed: No'
+      case 'spayed_neutered':
+        return value ? 'Spayed / Neutered: : Yes' : 'Spayed / Neutered: No'
+      case 'house_trained':
+        return value ? 'House Trained: Yes' : 'House Trained: No'
+      case 'shots_current':
+        return value ? 'Shots Up to Date: Yes' : 'Shots Up to Date: No'
+      case 'special_needs':
+        return value ? 'Special Needs: Yes' : 'Special Needs: No'
+      case 'cats':
+        return value != null ? (value ? 'Cats: Yes' : 'Cats: No') : 'Cats: Unknown';
+      case 'children':
+        return value != null ? (value ? 'Children: Yes' : 'Children: No') : 'Children: Unknown';
+      case 'dogs':
+        return value != null ? (value ? 'Dogs: Yes' : 'Dogs: No') : 'Dogs: Unknown';
+      // default:
+      //   return value != null ? value.toString() : ': Unknown';
+    }
+  }
 
   console.log(pet)
 
   return (
-    <div className="w-full flex flex-col mt-8 justify-center items-center">
-      <div className="w-[200px] h-[250px] relative overflow-hidden">
+    <div className="w-full flex flex-col justify-center items-center">
+      <SectionHeader title={pet.name}/>
+      <div className="w-[302px] h-[250px] relative overflow-hidden mt-7">
+        {/* placeholder for carousel images */}
         <img
           src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
           alt={pet.name}
           className="w-[100%] h-[100%] object-cover object-center rounded-xl"
         />
-        <div className="bg-white absolute w-full bottom-0 left-0 h-16 px-4 rounded-b-xl flex justify-center items-center tracking-[.018em] text-[#7F3F98]">
-          <h1 className="overflow-hidden whitespace-nowrap overflow-ellipsis">{pet.name}</h1>
-        </div>
-        <div className="bg-[#7F3F98] absolute  bottom-12 left-0 flex justify-center items-center tracking-[.018em] text-white">
-          <h1 className="py-2 px-3">Available</h1>
-        </div>
       </div>
-      <div className='text-center leading-8'>
-        <p>{pet.description}</p>
-        <p>Age: {pet.age}</p>
-        <p>Breed: {pet.breeds.primary}</p>
-        <p>Size: {pet.size}</p>
-        <p>Gender: {pet.gender}</p>
-        <p>Colors: {pet.colors.primary}</p>
-        <p>Attributes:</p>
-        {/* <ul>
-          {Object.entries(pet.attributes).map(([key, value]) => (
-            <li key={key}> {renameValue(key, value)} </li>
-
-          ))}
-        </ul> */}
-        {/* add tags pet.tags (Array) */}
+      <div className=' w-[302px] text-left leading-8 mt-10'>
+        <p> <strong>Name:</strong> {pet.name}</p>
+        <p> <strong>Age:</strong> {pet.age}</p>
+        <p> <strong>Breed:</strong> {pet.breeds.primary}</p>
+        <p> <strong>Size:</strong> {pet.size}</p>
+        <p> <strong>Gender:</strong> {pet.gender}</p>
+        <p> <strong>Background:</strong> {pet.description}</p>
+        <p> <strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
+        <p> <strong>Attributes:</strong></p>
+        <div className="px-5" >
+          <ul className='list-disc'>
+            {Object.entries(pet.attributes).map(([key, value]) => (
+              <li key={key}> {renameValue(key, value)} </li>
+            ))}
+          </ul>
+        </div>
+        <p> <strong>Environment:</strong></p>
+        <div className="px-5">
+          <ul className='list-disc'>
+            {Object.entries(pet.environment).map(([key, value]) => (
+              <li key={key}> {renameValue(key, value)} </li>
+            ))}
+          </ul>
+        </div>
 
       </div>
-      {/* add a carousel of other photos of amelia */}
+      <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-5">
+        <p className="text-left sm:text-center">
+            If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
+              <a href="mailto:longj1003@aol.com">
+                <span className='border-b border-gray-500 hover:border-black transition'>
+                  LongJ1003@aol.com
+                </span>
+              </a>
+              {' '}when complete.
+        </p>
+        <div className="flex flex-col min-[450px]:flex-row-reverse gap-10 justify-center items-center">
+          <div className="flex flex-col justify-center items-center gap-2 flex-1">
+            <img src={BarkLogo} className='w-auto h-32 py-2' alt="Logo" />
+            <p className="text-center">
+                Find your new best friend today!
+            </p>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-5 flex-1">
+            {pet.species === 'Cat' ? (
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Feline Application <BsDownload /></button>
+            ): pet.species === 'Dog' ? (
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Canine Application <BsDownload /></button>
+            ): null }
+
+          </div>
+
+        </div>
+        
+
+      </div>
+      
+      
+
     </div>
+    
     
   );
 };
