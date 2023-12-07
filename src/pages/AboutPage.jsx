@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-
-
 import SectionHeader from "../components/SectionHeader"
 
 const AboutPage = () => {
 
   useEffect(() => emailjs.init(import.meta.env.PUBLIC_KEY), [])
   const emailRef = useRef();
-  const nameRef = useRef()
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const messageRef = useRef();
+  const numberRef = useRef();
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -22,15 +23,18 @@ const AboutPage = () => {
         serviceId,
         templateId,
         {
-          name: nameRef.current.value,
-          recipient: emailRef.current.value
+          firstName: firstNameRef.current.value,
+          lastName: lastNameRef.current.value,
+          email: emailRef.current.value,
+          message: messageRef.current.value,
+          phoneNumber: numberRef.current.value
         },
         publicKey);
       alert("email successfully sent")
     } catch (error) {
-      console.log(error)
+      console.log(error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
   // const form = useRef()
@@ -111,33 +115,38 @@ const AboutPage = () => {
       <SectionHeader title='Contact Form' />
 
 
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <label>Name</label>
         <input ref={nameRef} type="text" name="user_name" />
         <label>Email</label>
         <input ref={emailRef} type="email" name="user_email" />
         <label>Message</label>
-        <textarea name="message" />
+        <input ref={numberRef} type='phone number' name='user_phone_number' />
+        <label>Phone Number</label>
+        <textarea ref={messageRef} name="message" />
         <button type="submit" value="Send"> Send </button>
-      </form>
+      </form> */}
 
       <div className='max-w-4xl w-full flex justify-center items-center p-5 my-5 font-[Poppins]'>
-        <div className="w-full flex flex-col justify-center items-center gap-5">
-          <div className='flex flex-col justify-center gap-5 w-full min-[450px]:flex-row '>
-            <input type="text" className="border-b-2 border-red bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="First Name" />
-            <input type="text" className="border-b-2 border-red bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="Last Name" />
+        <form onSubmit={handleSubmit}>
+          <div className="w-full flex flex-col justify-center items-center gap-5">
+            <div className='flex flex-col justify-center gap-5 w-full min-[450px]:flex-row '>
+              <input type="text" className="border-b-2 border-red bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="First Name" ref={firstNameRef} />
+              <input type="text" className="border-b-2 border-red bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="Last Name" ref={lastNameRef} />
+            </div>
+            <input type="text" className="border-b-2 border-red w-full bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="E-mail" ref={emailRef} />
+            <input type="text" className="border-b-2 border-red w-full bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="Phone Number" ref={numberRef} />
+            <textarea
+              className="border-b-2 border-red w-full bg-white p-2 focus:outline-none focus:border-green-500 resize-none"
+              placeholder="Your Message"
+              rows="4"
+              ref={messageRef}
+            />
+            <button className="bg-[#E5BC01] mt-4 text-[#214038] hover:bg-green-600 py-[10px] px-[30px] w-[250px] rounded-full focus:outline-none focus:shadow-outline-green active:bg-green-700" type='submit' value="Send">
+              Submit
+            </button>
           </div>
-          <input type="text" className="border-b-2 border-red w-full bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="E-mail" />
-          <input type="text" className="border-b-2 border-red w-full bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="Phone Number" />
-          <textarea
-            className="border-b-2 border-red w-full bg-white p-2 focus:outline-none focus:border-green-500 resize-none"
-            placeholder="Your Message"
-            rows="4"
-          />
-          <button className="bg-[#E5BC01] mt-4 text-[#214038] hover:bg-green-600 py-[10px] px-[30px] w-[250px] rounded-full focus:outline-none focus:shadow-outline-green active:bg-green-700">
-            Submit
-          </button>
-        </div>
+        </form>
       </div>
     </div>
   )
