@@ -59,7 +59,7 @@ export default function DonatePage () {
 
                 </div>
             </div>
-            <div className="font-bold mb-5 px-5">Please <a href="/about" className="underline text-blue-700">contact us</a> to set up a time to drop off donations.</div>
+            <div className="font-bold mb-5 px-5">Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.</div>
 
         </div>
     )
