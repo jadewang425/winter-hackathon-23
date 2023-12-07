@@ -24,7 +24,7 @@ export default function AvailablePets() {
     }, [cats, dogs]);
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full">
             <div className="flex gap-5 m-5 ">
             </div>
             <div className="flex flex-col gap-1 m-4">
@@ -69,7 +69,6 @@ export default function AvailablePets() {
                 <Link to={`/adoption`}>
                     <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl mx-3 my-2"> View All</button>
                 </Link>
-
             </div>
             
             
