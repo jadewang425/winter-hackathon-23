@@ -1,7 +1,7 @@
 import BarkLogo from '../../assets/BarkLogo.svg'
 import './Navbar.css'
 import { NavLink, Link } from 'react-router-dom';
-import { IoMdMenu, IoMdSettings } from "react-icons/io";
+import { IoMdMenu } from "react-icons/io";
 import { useState } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 
