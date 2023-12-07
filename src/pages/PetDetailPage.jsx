@@ -6,6 +6,7 @@ import SectionHeader from "../components/SectionHeader";
 import BarkLogo from '../assets/BarkLogo.svg'
 import arrow from '../assets/arrow.svg'
 import { BsDownload } from "react-icons/bs";
+import { Carousel } from 'react-responsive-carousel';
 
 const PetDetailPage = () => {
   const { id } = useParams();
@@ -50,7 +51,17 @@ const PetDetailPage = () => {
     }
   }
 
-  console.log(pet)
+  // console.log(pet)
+
+  const petPhotos = pet.photos.map((photo) => (
+    <div className="flex flex-col sm:flex-row justify-c">
+      <img
+        src={photo.medium}
+        alt={pet.name}
+        className="w-[302px] h-[250px] object-cover object-center rounded-xl"
+      />
+    </div>
+  ))
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
@@ -60,15 +71,52 @@ const PetDetailPage = () => {
 
         <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
       </div>
-      <div className="w-[302px] h-[250px] relative overflow-hidden mt-7">
-        {/* placeholder for carousel images */}
-        <img
-          src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
-          alt={pet.name}
-          className="w-[100%] h-[100%] object-cover object-center rounded-xl"
-        />
+      <div className="w-[302px] h-[300px] flex relative overflow-hidden mt-7">
+        <Carousel
+                className="pt-6 mb-0 sm:mb-5"
+                autoPlay
+                infiniteLoop
+                showArrows
+                showThumbs={false}
+                showStatus={false}
+                interval={5000}
+                // renderThumbs={(children) => []}
+                renderIndicator={(clickHandler, isSelected, index, label) => {
+                    const defaultStyles = {
+                        background: isSelected ? '#E5BC01' : '#7F3F98',
+                        width: 8,
+                        height: 8,
+                        display: 'inline-block',
+                        margin: ' 0px 5px',
+                        cursor: 'pointer',
+                        borderRadius: '50%',
+                    };
+
+                    const activeStyles = {
+                        background: '#E5BC01',
+                        width: 12,
+                        height: 12,
+                    };
+
+                    return (
+                        <li
+                            style={isSelected ? { ...defaultStyles, ...activeStyles } : defaultStyles}
+                            onClick={clickHandler}
+                            onKeyDown={clickHandler}
+                            value={index}
+                            key={index}
+                            role="button"
+                            tabIndex={0}
+                            title={`${label} ${index + 1}`}
+                            aria-label={`${label} ${index + 1}`}
+                        />
+                    );
+                }}
+            >
+          { petPhotos }
+        </Carousel>
       </div>
-      <div className=' w-[302px] text-left leading-8 mt-10'>
+      <div className=' w-[302px] text-left leading-8 mt-5'>
         <p> <strong>Name:</strong> {pet.name}</p>
         <p> <strong>Age:</strong> {pet.age}</p>
         <p> <strong>Breed:</strong> {pet.breeds.primary}</p>
