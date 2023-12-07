@@ -13,17 +13,20 @@ const AboutPage = () => {
       <div className="max-w-6xl flex flex-col gap-5 my-7">
         <div className='flex flex-col justify-start items-start gap-5 px-5 '>
           <div className='flex-1 '>
-            <p className="font-bold text-[#121212] font-[Poppins] text-base mb-3">Boudreaux’s Animal Rescue Krewe (B.A.R.K.) is a 501c(3) non-profit animal welfare organization and NO-KILL animal shelter in Alexandria, Louisiana. </p>
-            <p className="font-normal text-[#121212] font-[Poppins] text-base">We are determined and inspired to rescue homeless and/or unwanted dogs in our area because there are simply too many dogs that end up in shelters and get euthanized regularly. </p>
+            <p className="font-normal text-[#121212] font-[Poppins] text-base">
+              Husband and wife team, Julian and Eva Long, have rescued animals all of their lives, but one day in 2004, when Julian was exposed to a local animal shelter’s day of euthanasia, he adopted ten dogs from “Death Row” and the two have
+              never looked back.
+            </p>
+
           </div>
           <div className='flex justify-center items-center w-full h-[15rem] sm:w-full'>
             <img src={img1} alt="A Dog being examined" />
           </div>
           <p className="font-normal text-[#121212] font-[Poppins] text-base">
-            Husband and wife team, Julian and Eva Long, have rescued animals all of their lives, but one day in 2004, when Julian was exposed to a local animal shelter’s day of euthanasia, he adopted ten dogs from “Death Row” and the two have
-            never looked back. The tragedy of Hurricane Katrina hit one year later, and their shelter was overflowing with abandoned animals. Years have passed, and their incredible journey is on-going. Over 3,000 dogs have been rescued and placed
+            The tragedy of Hurricane Katrina hit one year later, and their shelter was overflowing with abandoned animals. Years have passed, and their incredible journey is on-going. Over 3,000 dogs have been rescued and placed
             in their forever homes, but there are always more in need
           </p>
+          <p className="font-normal text-[#121212] font-[Poppins] text-base">They are determined and inspired to rescue homeless and/or unwanted dogs in our area because there are simply too many dogs that end up in shelters and get euthanized regularly. </p>
           <div className='flex justify-center items-center w-full h-[15rem] sm:w-full'>
             <img src={img2} alt="Dogs in crates on a lawn" />
           </div>
@@ -40,8 +43,9 @@ const AboutPage = () => {
           </p>
           <p className="font-normal text-[#121212] font-[Poppins] text-base">
             We rely heavily on our volunteers, donations, and fundraisers to supply the needs, care, and shelter to continue to save these animal&apos;s lives and to find them safe, loving, forever homes. Please send us a message below if you would be interested in any aspect of helping, fostering, or adopting these precious animals.
-            <span className="font-semibold">Viewing of the animals is done by appointment only, which can be set up by contacting us below.</span>
+            <span className="font-semibold">Viewing of the animals is done by appointment only, which can be set up by contacting us.</span>
           </p>
+          <p className="font-bold text-[#121212] font-[Poppins] text-sm mb-3">Boudreaux’s Animal Rescue Krewe (B.A.R.K.) is a 501c(3) non-profit animal welfare organization and NO-KILL animal shelter in Alexandria, Louisiana. </p>
         </div>
       </div>
 
