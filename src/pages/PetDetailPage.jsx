@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { usePet } from '../utilities/PetContext';
 import placeholder from '../assets/imgHolder.svg'
 import SectionHeader from "../components/SectionHeader";
 import BarkLogo from '../assets/BarkLogo.svg'
+import arrow from '../assets/arrow.svg'
 import { BsDownload } from "react-icons/bs";
-
 
 const PetDetailPage = () => {
   const { id } = useParams();
   const { getPetById } = usePet();
   const [pet, setPet] = useState(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchPetDetails = async () => {
@@ -54,6 +55,11 @@ const PetDetailPage = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <SectionHeader title={pet.name}/>
+      <div className='flex items-center w-[380px] text-left leading-4 mt-10'>
+      <img src={arrow} alt="arrow" className="transform rotate-90 mr-2 w-4 h-4" />
+
+        <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
+      </div>
       <div className="w-[302px] h-[250px] relative overflow-hidden mt-7">
         {/* placeholder for carousel images */}
         <img
