@@ -47,7 +47,7 @@ export default function AvailablePets() {
                 </div>
 
             </div>
-            <div className="flex gap-10 m-3 ">
+            <div className="flex gap-5 m-4">
             </div>
             <div className="flex flex-col gap-1 m-4">
                 <h2 className="w-full text-left font-Poppins font-semibold text-16 pl-4">Available Dogs</h2>
