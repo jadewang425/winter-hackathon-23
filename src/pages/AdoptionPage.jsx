@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { usePet } from "../utilities/PetContext";
 import { Link } from "react-router-dom";
+import SectionHeader from "../components/SectionHeader";
 
 const AdoptionPage = () => {
   const { getPetByType } = usePet();
@@ -27,42 +28,27 @@ const AdoptionPage = () => {
 
 
   return (
-    <div>
-      <h1>AdoptionPage</h1>
-      <div className="flex gap-10 m-10 ">
-        <input className=" bg-slate-500 text-white p-2" placeholder="zip code" type="text" value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
-        <button className="px-5 py-3 rounded-lg bg-purple-100" onClick={() => handleButtonClick("dog")}>Get Dogs</button>
-        <button className="px-5 py-3 rounded-lg bg-purple-100" onClick={() => handleButtonClick("cat")}>Get Cats</button>
+    <div className='max-w-[100%] flex flex-col items-center pt-5 font-[Poppins]'>
+      <SectionHeader title='Find a Pet' />
+      <div className="max-w-6xl  w-full flex flex-col gap-[20px] my-7 px-5">
+        <h1 className="font-semibold text-[#121212]  ml-1"> Find your new best friend today! </h1>
+        <div className="h-[30rem] bg-[#EFEEF1] rounded-[10px]">
+
+        </div>
       </div>
-      {error && <p className="text-red-500">{error}</p>}
-      {/* below is code to make sure you are getting results. we still need to ad css to the page container which is why it looks very funky 
-      when the below code is uncommented */}
-        <table>
-          <thead>
-            <tr>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Breed</th>
-              <th>Gender</th>
-              {/* <th>Url</th> */}
-            </tr>
-          </thead>
-          <tbody>
-            {pets.map((pet) => (
-              <tr key={pet.id}>
-                <td>
-                  {pet.photos.length > 0 && ( 
-                  <img src={pet.photos[0].small} alt={pet.name} style={{ maxWidth: '100px'}} />)}
-                </td>
-                <Link to={`/adoption/${pet.id}`}>{pet.name}</Link>
-                <td>{pet.age}</td>
-                <td>{pet.breeds.length > 0 && pet.breeds.primary}</td>
-                <td>{pet.gender}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <SectionHeader title='Adopt a Pet' />
+      <div className="max-w-6xl  w-full flex flex-col gap-[20px] my-7 px-5">
+          <p className="">
+            If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
+            <a href="mailto:longj1003@aol.com">
+              <span className='border-b border-gray-500 hover:border-black transition'>
+                LongJ1003@aol.com
+              </span>
+            </a>
+            {' '}when complete.
+          </p>
+          
+      </div>
     </div>
   );
 };
