@@ -12,6 +12,7 @@ const HomePage = () => {
       <Mission />
       <AvailablePets />
       <Facebook />
+      <div className="p-5 self-start">If you have any question, please contact us <a href="/about" className="font-bold text-[#E5BC01]">Here</a>!</div>
     </div>
   )
 }
