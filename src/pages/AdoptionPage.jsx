@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { usePet } from "../utilities/PetContext";
 import { Link } from "react-router-dom";
+import AdoptionForms from "../components/AdoptionForms/AdoptionForms";
+import Logo from "../assets/NewLogo.svg"
 
 const AdoptionPage = () => {
   const { getPetByType } = usePet();
@@ -63,6 +65,11 @@ const AdoptionPage = () => {
             ))}
           </tbody>
         </table>
+        <div className="font-bold p-3 bg-[#214038] text-white">Adopt a Pet</div>
+        <p class="p-5">If you would like to adopt a pet, please fill out the applicable form below and send it to LongJ1003@aol.com when complete.</p>
+        <AdoptionForms/>
+        <img src={Logo}></img>
+        <p>Find your new best friend today!</p>
     </div>
   );
 };
