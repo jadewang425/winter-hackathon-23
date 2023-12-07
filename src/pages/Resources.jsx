@@ -6,10 +6,10 @@ const Resources = () => {
 
 
   return (
-    <div >
+    <div className='pt-2'>
       <SectionHeader title='Resources' />
 
-      <div className=''>
+      <div className='pt-0.5'>
 
         <ExpandableDropdown title="Animal Rescue Help">
           <div className='flex flex-col gap-10'>
