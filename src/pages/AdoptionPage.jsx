@@ -7,6 +7,8 @@ import BarkLogo from '../assets/BarkLogo.svg'
 import PetLogo from '../assets/petfinderlogo.png'
 import StaggeredDropDown from "../components/OptionsDropDown";
 import placeholder from '../assets/imgHolder.svg'
+import canineFile from '../assets/barkadoptionformcanine.pdf'
+import felineFile from '../assets/barkadoptionformfeline.pdf'
 
 
 const AdoptionPage = () => {
@@ -106,18 +108,15 @@ const AdoptionPage = () => {
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-5 flex-1">
-            <a href="../assets/barkadoptionformcanine.doc" download>
-              <button
-                className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]"
-              >
+            <a href={canineFile} target="_blank" rel="noopener noreferrer">
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">
                 Canine Application <BsDownload />
               </button>
             </a>
-            <a href="../assets/barkadoptionformcanine.doc" download>
-              <button
-                className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]"
-                href="../assets/barkadoptionform.feline.doc" download>
-                Feline Application <BsDownload /></button>
+            <a href={felineFile} target="_blank" rel="noopener noreferrer">
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">
+                Feline Application <BsDownload />
+              </button>
             </a>
           </div>
         </div>
@@ -134,7 +133,7 @@ const PetCard = ({ pet }) => {
 
   return (
     <Link to={`/adoption/${pet.id}`}>
-      <div className="w-[220px] h-[250px] relative overflow-hidden">
+      <div className="w-[220px] sm:w-[300px] sm:h-[350px] h-[250px] relative overflow-hidden">
         <img
           src={lastPhotoUrl}
           // src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
