@@ -1,13 +1,17 @@
 import SectionHeader from '../components/SectionHeader'
 
-export default function DonatePage () {
+export default function DonatePage() {
     return (
         <div className="w-full flex-col justify-center">
             <SectionHeader title="Donate Today" />
             <div className="mb-5 flex flex-col">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
                 <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
-                    <button className="w-full justify-center font-bold" href="http://barkanimalrescue.org/Donate">DONATE</button>
+                    <button className="w-full justify-center font-bold">
+                        <a target='_blank' href='https://www.paypal.com/donate?token=yRV7drz_9PYdQxKOxXuXVIsaV9cywK007ohG9wJLm8ZC8-xfmZvl_45dR_UrHlhgbdTJ6r71zTDJzhTk'>
+                            DONATE
+                        </a>
+                    </button>
                 </div>
             </div>
             <SectionHeader title="Donation Impact" />
@@ -55,11 +59,11 @@ export default function DonatePage () {
                         <li>Dog houses (New or Old)</li>
                         <li>Wal-Mart, Tractor Supply or Petsmart Gift Cards</li>
                         <li>Monetary Donations</li>
-                    </ul> 
+                    </ul>
 
                 </div>
             </div>
-            <div className="font-bold mb-5 px-5">Please <a href="/about" className="underline text-blue-700">contact us</a> to set up a time to drop off donations.</div>
+            <div className="font-bold mb-5 px-5">Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.</div>
 
         </div>
     )
