@@ -27,7 +27,7 @@ const AdoptionPage = () => {
 
 
   return (
-    <div>
+    <div className='max-w-[100%] flex flex-col items-center pt-5'>
       <h1>AdoptionPage</h1>
       <div className="flex gap-10 m-10 ">
         <input className=" bg-slate-500 text-white p-2" placeholder="zip code" type="text" value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
