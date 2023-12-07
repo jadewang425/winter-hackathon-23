@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* font-family: 'Poppins', sans-serif; */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -34,4 +35,8 @@ body {
 
 #root{
   width: 100%;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

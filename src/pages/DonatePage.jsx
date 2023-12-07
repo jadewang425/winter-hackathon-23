@@ -1,14 +1,14 @@
 export default function DonatePage () {
     return (
         <div className="w-full flex-col justify-center">
-            <div className="bg-gray-300 font-bold p-3">Donate Today</div>
+            <div className="font-bold p-3  bg-[#214038] text-white">Donate Today</div>
             <div className="mb-5 flex flex-col">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
-                <div className="w-[100px] bg-gray-300 rounded-full self-center">
+                <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
                     <button className="w-full justify-center font-bold" href="http://barkanimalrescue.org/Donate">DONATE</button>
                 </div>
             </div>
-            <div className="bg-gray-300 font-bold p-3">Donation Impact</div>
+            <div className="font-bold p-3 bg-[#214038] text-white">Donation Impact</div>
             <div className="mb-5">
                 <div className="p-5">You can set it up TODAY with your bank to have an automatic check sent to our Post Office Box each month on the same day or you can set up monthly donations through PayPal. Every little bit helps!</div>
                 <div className="px-5">
@@ -24,7 +24,7 @@ export default function DonatePage () {
                     </ul>
                 </div>
             </div>
-            <div className="bg-gray-300 font-bold p-3">In-Kind Donation Wishlist</div>
+            <div className="font-bold p-3 bg-[#214038] text-white">In-Kind Donation Wishlist</div>
             <div className="flex p-5">
                 <div>
                     <ul className="list-disc pl-3 pr-6">
