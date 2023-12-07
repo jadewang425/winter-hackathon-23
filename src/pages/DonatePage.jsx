@@ -1,4 +1,5 @@
 import SectionHeader from '../components/SectionHeader'
+import ExpandableDropdown from '../components/ExpandableDropdown';
 
 export default function DonatePage() {
     return (
@@ -31,27 +32,34 @@ export default function DonatePage() {
                 </div>
             </div>
             <SectionHeader title="In-Kind Donation Wishlist" />
-            <div className="flex p-5">
-                <div>
-                    <ul className="list-disc pl-3 pr-6">
+            <ExpandableDropdown title="Cleaning Supplies">
+                <div className="pl-10 pr-5">
+                    <ul className="list-disc">
                         <li>Bleach</li>
                         <li>Pump Up 2 Gallon Sprayers</li>
                         <li>Disposable Gloves (any size)</li>
                         <li>Dawn Hand Soap</li>
                         <li>Antibacterial Hand Soap (any type)</li>
+                    </ul>
+                </div>
+            </ExpandableDropdown>
+            <ExpandableDropdown title="Food">
+                <div className="pl-10 pr-5">
+                    <ul className="list-disc">
+                        <li>Canned Cat Food</li>
+                        <li>Dry Dog Food (High Protein Retriever Brand from Tractor Supply)</li>
+                    </ul>
+                </div>
+            </ExpandableDropdown>
+            <ExpandableDropdown title="Other">
+                <div className="pl-10 pr-5">
+                    <ul className="list-disc">
                         <li>Baby Shampoo</li>
                         <li>Toilet Paper</li>
                         <li>Sandwich Size Zip Lock Bags</li>
                         <li>Towels, Sheets, Blankets</li>
                         <li>Cat Litter</li>
-                        <li>Canned Cat Food</li>
                         <li className="font-bold">Milk Bones (every dog gets a treat each morning- always in need of these)</li>
-                    </ul>
-
-                </div>
-                <div>
-                    <ul className="list-disc">
-                        <li>Dry Dog Food (High Protein Retriever Brand from Tractor Supply)</li>
                         <li>Large, X-Large, and XX-Large Kong Toys</li>
                         <li>Commercial no kinking 100 foot water hoses</li>
                         <li>Metal Water Hose Nozzles (Gilmore)</li>
@@ -62,8 +70,8 @@ export default function DonatePage() {
                     </ul>
 
                 </div>
-            </div>
-            <div className="font-bold mb-5 px-5">Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.</div>
+            </ExpandableDropdown>
+            <div className="font-bold p-5 mb-5">Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.</div>
 
         </div>
     )
