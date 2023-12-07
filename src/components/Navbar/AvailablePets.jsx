@@ -24,7 +24,7 @@ export default function AvailablePets() {
     }, [cats, dogs]);
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full">
             <div className="flex gap-5 m-5 ">
             </div>
             <div className="flex flex-col gap-1 m-4">
@@ -37,6 +37,7 @@ export default function AvailablePets() {
                             alt={cat.name}
                             style={{ maxWidth: '100px', borderRadius: '16px' }}
                             />
+                            {/* there is an issue with the cat id */}
                             <Link to={`/adoption/${cat.id}`} className="font-Poppins font-normal text-16 pt-4 text-left">
                             <p>{cat.name},</p> <p>{cat.age}</p>
                             </Link>
@@ -46,7 +47,7 @@ export default function AvailablePets() {
                 </div>
 
             </div>
-            <div className="flex gap-10 m-5 ">
+            <div className="flex gap-5 m-4">
             </div>
             <div className="flex flex-col gap-1 m-4">
                 <h2 className="w-full text-left font-Poppins font-semibold text-16 pl-4">Available Dogs</h2>
@@ -66,9 +67,10 @@ export default function AvailablePets() {
                     ))}
 
                 </div>
-
+                <Link to={`/adoption`}>
+                    <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl mx-3 my-2"> View All</button>
+                </Link>
             </div>
-            <button type="submit"> View All</button>
             
             
         </div>
