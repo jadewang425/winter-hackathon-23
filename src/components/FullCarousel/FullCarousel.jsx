@@ -1,8 +1,8 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import IMG1 from '../../assets/Bernard.svg';
-import IMG2 from '../../assets/Puppies.svg';
-import IMG3 from '../../assets/Kitten.svg';
+import IMG2 from '../../assets/Tofu.svg';
+import IMG3 from '../../assets/AdoptionEvent.svg';
 
 const FullCarousel = () => {
     return (
