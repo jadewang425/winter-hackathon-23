@@ -4,7 +4,7 @@ import { usePet } from '../utilities/PetContext';
 import placeholder from '../assets/imgHolder.svg'
 import SectionHeader from "../components/SectionHeader";
 import BarkLogo from '../assets/BarkLogo.svg'
-import arrow from '../assets/arrow.svg'
+import arrow from '../assets/Arrow.svg'
 import { BsDownload } from "react-icons/bs";
 import { Carousel } from 'react-responsive-carousel';
 import canineFile from '../assets/barkadoptionformcanine.pdf'
@@ -88,9 +88,10 @@ const PetDetailPage = () => {
   ) : (
     <p>{placeholder}</p>
   );
-  
+
 
   return (
+
     <div className="w-full flex flex-col justify-center items-center">
       <SectionHeader title={pet.name} />
       <div className='flex items-center w-[380px] text-left leading-4 mt-10'>
@@ -100,17 +101,17 @@ const PetDetailPage = () => {
       </div>
       <div className="w-[304px] flex relative overflow-hidden mt-7 items-center justify-center" key={pet.id}>
         <Carousel
-                className="pt-6 mb-0 sm:mb-5 text-center"
-                autoPlay
-                infiniteLoop
-                showArrows
-                showThumbs={true}
-                showIndicators={false}
-                showStatus={false}
-                interval={5000}
+          className="pt-6 mb-0 sm:mb-5 text-center"
+          autoPlay
+          infiniteLoop
+          showArrows
+          showThumbs={true}
+          showIndicators={false}
+          showStatus={false}
+          interval={5000}
 
         >
-          { petPhotos }
+          {petPhotos}
         </Carousel>
       </div>
       <div className='w-[302px] text-left leading-8 mt-5'>
@@ -175,6 +176,7 @@ const PetDetailPage = () => {
         </div>
       </div>
     </div>
+
 
   );
 };
