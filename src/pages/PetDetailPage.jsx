@@ -7,6 +7,8 @@ import BarkLogo from '../assets/BarkLogo.svg'
 import arrow from '../assets/arrow.svg'
 import { BsDownload } from "react-icons/bs";
 import { Carousel } from 'react-responsive-carousel';
+import canineFile from '../assets/barkadoptionformcanine.pdf'
+import felineFile from '../assets/barkadoptionformfeline.pdf'
 
 const PetDetailPage = () => {
   const { id } = useParams();
@@ -130,9 +132,13 @@ const PetDetailPage = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-5 flex-1">
             {pet.species === 'Cat' ? (
-              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Feline Application <BsDownload /></button>
+              <a href={canineFile} target="_blank" rel="noopener noreferrer">
+                <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Feline Application <BsDownload /></button>
+              </a>
             ) : pet.species === 'Dog' ? (
-              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Canine Application <BsDownload /></button>
+              <a href={felineFile} target="_blank" rel="noopener noreferrer">
+                <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Canine Application <BsDownload /></button>
+              </a>
             ) : null}
 
           </div>
