@@ -68,7 +68,7 @@ const PetDetailPage = () => {
       interval={5000}
     >
       {pet.photos.map((photo, index) => (
-        <div key={index} className="w-[100%] flex flex-col sm:flex-row justify-c">
+        <div key={index} className="w-[80%] flex flex-col sm:flex-row justify-c rounded-2xl">
           {photo.medium ? (
             <img
               src={photo.medium}
