@@ -48,7 +48,7 @@ const AdoptionPage = () => {
     <div className='max-w-[100%] flex flex-col items-center pt-2 font-[Poppins]'>
       <SectionHeader title='Find a Pet' />
       <div className="max-w-6xl  w-full flex flex-col gap-[20px] my-7 px-5">
-        <h1 className="font-semibold text-[rgb(18,18,18)]  ml-1 "> Find your new best friend today! </h1>
+        <h1 className="font-semibold text-[rgb(18,18,18)]  ml-1 text-center"> Find your new best friend today! </h1>
         <div className="h-[30rem] bg-[#EFEEF1] rounded-[10px] flex flex-col justify-start items-center py-5 px-4 gap-2 overflow-y-scroll hide-scrollbar">
           <img src={PetLogo} alt="pet finder logo" className=" w-[162px]" />
           <div className=" relative flex flex-col justify-center items-center gap-1 ">
