@@ -57,34 +57,37 @@ const PetDetailPage = () => {
   // console.log(pet)
 
   const petPhotos = pet.photos && pet.photos.length > 0 ? (
-    <Carousel
-      className="pt-6 mb-0 sm:mb-5 text-center"
-      autoPlay
-      infiniteLoop
-      showArrows
-      showThumbs={false}
-      showIndicators={false}
-      showStatus={false}
-      interval={5000}
-    >
-      {pet.photos.map((photo, index) => (
-        <div key={index} className="w-[80%] flex flex-col sm:flex-row justify-c rounded-2xl">
-          {photo.medium ? (
-            <img
-              src={photo.medium}
-              alt={pet.name}
-              className="max-h-[250px] object-contain object-center rounded-2xl"
-            />
-          ) : (
-            <img
-              src={placeholder}
-              alt={pet.name}
-              className="max-h-[250px] object-contain object-center rounded-2xl"
-            />
-          )}
-        </div>
-      ))}
-    </Carousel>
+    <div className='flex justify-center items-center'>
+      <Carousel
+        className="pt-6 mb-0 sm:mb-5 text-center"
+        autoPlay
+        infiniteLoop
+        showArrows
+        showThumbs={true}
+        showIndicators={false}
+        showStatus={false}
+        interval={5000}
+      >
+        {pet.photos.map((photo, index) => (
+          <div key={index} className="w-[100%] flex sm:flex-row justify-center rounded-2xl items-center">
+            {photo.medium ? (
+              <img
+                src={photo.medium}
+                alt={pet.name}
+                className="max-h-[250px] object-contain object-center rounded-2xl"
+              />
+            ) : (
+              <img
+                src={placeholder}
+                alt={pet.name}
+                className="max-h-[250px] object-contain object-center rounded-2xl"
+              />
+            )}
+          </div>
+        ))}
+      </Carousel>
+
+    </div>
   ) : (
     <p>{placeholder}</p>
   );
@@ -99,7 +102,7 @@ const PetDetailPage = () => {
 
         <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
       </div>
-      <div className="w-[304px] flex relative overflow-hidden mt-7 items-center justify-center" key={pet.id}>
+      <div className="w-full flex relative  mt-7 items-center justify-center" key={pet.id}>
         <Carousel
           className="pt-6 mb-0 sm:mb-5 text-center"
           autoPlay
