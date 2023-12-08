@@ -6,7 +6,7 @@ const Resources = () => {
 
 
   return (
-    <div className='pt-2'>
+    <div className='pt-2 font-[Poppins]'>
       <SectionHeader title='Resources' />
 
       <div className='pt-0.5'>
