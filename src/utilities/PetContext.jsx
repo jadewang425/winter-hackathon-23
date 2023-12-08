@@ -52,7 +52,7 @@ export const PetProvider = ({children}) => {
 
     const getPetByType = async (petType, zipcode, gender, age, size) => {
         try {
-          const response = await axios.post(`${BASE_URL}/v1/pets`, 
+          const response = await axios.post(`${BASE_URL}/api/v1/pets`, 
           {
             type: petType,
             location: zipcode,
@@ -70,7 +70,7 @@ export const PetProvider = ({children}) => {
 
     const getPetById = async (petId) => {
       try {
-        const response = await axios.get(`${BASE_URL}/v1/pets/${petId}`,
+        const response = await axios.get(`${BASE_URL}/api/v1/pets/${petId}`,
           {
             headers: {
               Authorization: token,
