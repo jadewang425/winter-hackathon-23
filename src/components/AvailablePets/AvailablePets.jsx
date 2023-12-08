@@ -9,7 +9,6 @@ export default function AvailablePets() {
 
     useEffect(() => {
         if (homePets) {
-            console.log(homePets)
             const sortedPets = homePets.slice().sort((a,b) => new Date(a.published_at) - new Date(b.published_at))
             const dogs = sortedPets.filter(pet => pet.species === 'Dog');
             setDogs(dogs.slice(0,3))
@@ -18,10 +17,10 @@ export default function AvailablePets() {
             setCats(cats.slice(0,3))
         }
     }, [homePets]);
-    useEffect(() => {
-        console.log('CATS',cats)
-        console.log('DOGS',dogs)
-    }, [cats, dogs]);
+    // useEffect(() => {
+    //     console.log('CATS',cats)
+    //     console.log('DOGS',dogs)
+    // }, [cats, dogs]);
 
     return (
         <div className="w-full px-4 my-5 flex justify-center font-[Poppins]">
@@ -29,7 +28,7 @@ export default function AvailablePets() {
                 <PetContainer petType={cats} header='Available Cats' />
                 <PetContainer petType={dogs} header='Available Dogs' />
                 <Link to={`/adoption`} className="w-32 h-8 bg-[#E5BC01] text-[#214038] flex justify-center items-center rounded-2xl my-2">
-                    View All
+                    Adopt
                 </Link>
             </div>
         </div>
