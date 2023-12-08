@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import axios from 'axios'
 
+const BASE_URL = import.meta.env.VITE_REACT_APP_BACKEND_URL
 const PetContext = createContext()
 
 export const PetProvider = ({children}) => {
@@ -51,7 +52,7 @@ export const PetProvider = ({children}) => {
 
     const getPetByType = async (petType, zipcode, gender, age, size) => {
         try {
-          const response = await axios.post("http://localhost:8080/api/v1/pets", 
+          const response = await axios.post(`${BASE_URL}/v1/pets`, 
           {
             type: petType,
             location: zipcode,
@@ -69,7 +70,7 @@ export const PetProvider = ({children}) => {
 
     const getPetById = async (petId) => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/v1/pets/${petId}`,
+        const response = await axios.get(`${BASE_URL}/v1/pets/${petId}`,
           {
             headers: {
               Authorization: token,

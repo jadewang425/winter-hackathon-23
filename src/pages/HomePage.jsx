@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
 
+
   return (
     <div className="w-full flex flex-col justify-start items-center z-0 relative font-[Poppins]">
       <FullCarousel />
