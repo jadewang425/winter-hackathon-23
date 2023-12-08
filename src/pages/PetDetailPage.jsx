@@ -100,7 +100,7 @@ const PetDetailPage = () => {
       <div className='flex items-center w-[380px] text-left leading-4 mt-10'>
         <img src={arrow} alt="arrow" className="transform rotate-90 mr-2 w-4 h-4" />
 
-        <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
+        <a href="#" onClick={() => navigate(-1)}>back previous page</a>
       </div>
       <div className="w-full flex relative  mt-7 items-center justify-center" key={pet.id}>
         <Carousel
@@ -118,7 +118,8 @@ const PetDetailPage = () => {
         </Carousel>
       </div>
       <div className='w-[302px] text-left leading-8 mt-5'>
-        <p><strong>Name:</strong> {pet.name}</p>
+      <p className="tracking-wide"><strong>Name:</strong> {pet.name}</p>
+
         <p><strong>Age:</strong> {pet.age}</p>
         <p><strong>Breed:</strong> {pet.breeds.primary}</p>
         <p><strong>Size:</strong> {pet.size}</p>
