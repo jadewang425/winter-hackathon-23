@@ -28,31 +28,10 @@ export default function AvailablePets() {
             <div className="max-w-2xl flex flex-col gap-1 overflow-hidden  sm:w-full sm:items-center">
                 <PetContainer petType={cats} header='Available Cats' />
                 <PetContainer petType={dogs} header='Available Dogs' />
-                {/* <div className="flex flex-col gap-1 min-[450px]:w-full">
-                    <h2 className="w-full text-left font-Poppins font-semibold text-16 pb-2">Available Cats</h2>
-                    <div className="flex flex-row gap-6 min-[450px]:justify-center overflow-x-scroll hide-scrollbar">
-                        {cats.map((cat, index) => (
-                            <PetCard pet={cat} key={index} />
-                        ))}
-                    </div>
-                </div> */}
-                {/* <div className="flex flex-col gap-1 ">
-                    <h2 className="w-full text-left font-Poppins font-semibold text-16 pb-2">Available Dogs</h2>
-                    <div className="flex flex-row gap-6  overflow-x-scroll .hide-scrollbar">
-                        {dogs.map((dog, index) => (
-                            <PetCard pet={dog} key={index} />
-                        ))}
-                    </div>
-                    <Link to={`/adoption`}>
-                        <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl my-2"> View All</button>
-                    </Link>
-                </div> */}
-                <Link to={`/adoption`}>
-                    <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl my-2"> View All</button>
+                <Link to={`/adoption`} className="w-32 h-8 bg-[#E5BC01] flex justify-center items-center rounded-2xl my-2">
+                    View All
                 </Link>
             </div>
-            
-            
         </div>
         );
 }
@@ -75,16 +54,20 @@ const PetCard = ({pet}) => {
     const lastKeyOfFirstPhotoArray = pet.photos?.[0] ? Object.keys(pet.photos[0]).pop() : null;
     const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
     return (
-        <div key={pet.id} className="flex flex-col items-left pb-4 ">
-            <Link to={`/adoption/${pet.id}`} className="font-Poppins font-normal text-16 pt-3 text-left">
-                <img
-                    src={lastPhotoUrl}
-                    alt={pet.name}
-                    style={{ borderRadius: '16px' }}
-                    className="object-cover object-center max-w-[140px] w-[135px] h-[150px]"
-                />
-                <p>{pet.name},</p> <p>{pet.age}</p>
-            </Link>
-        </div>
+        <div key={pet.id} className="flex flex-col items-left pb-4 gap-4 sm:flex-1 sm:items-center">
+                    <Link to={`/adoption/${pet.id}`} className="flex-1" >
+                            <img
+                                src={lastPhotoUrl}
+                                alt={pet.name}
+                                style={{ borderRadius: '16px' }}
+                                className="object-cover object-center max-w-[140px] w-[135px] h-[160px] sm:h-[210px] sm:max-w-[200px] sm:w-[190px]"
+                            />
+                    </Link>
+                    <div className="sm:hidden">
+                        <p className="leading-5">{pet.name},</p> 
+                        <p className="leading-5 ">{pet.age}</p>
+                    </div>
+                    <p className="max-sm:hidden">{pet.name}, {pet.age}</p>
+            </div>
     )
 }
