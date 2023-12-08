@@ -52,6 +52,7 @@ const PetDetailPage = () => {
       //   return value != null ? value.toString() : ': Unknown';
     }
   }
+  console.log('PET DETAIL', pet)
 
   // console.log(pet)
 
@@ -93,7 +94,8 @@ const PetDetailPage = () => {
         <p> <strong>Breed:</strong> {pet.breeds.primary}</p>
         <p> <strong>Size:</strong> {pet.size}</p>
         <p> <strong>Gender:</strong> {pet.gender}</p>
-        <p> <strong>Background:</strong> {pet.description}</p>
+        {pet.description !== null && pet.description !== undefined && (
+        <p> <strong>Background:</strong> {pet.description}</p>)}
         <p> <strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
         <p> <strong>Attributes:</strong></p>
         <div className="px-5" >
@@ -113,7 +115,7 @@ const PetDetailPage = () => {
         </div>
 
       </div>
-      <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-5">
+      <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-7">
         <p className="text-left sm:text-center">
           If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
           <a href="mailto:longj1003@aol.com">
