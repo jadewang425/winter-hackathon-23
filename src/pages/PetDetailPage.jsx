@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { usePet } from '../utilities/PetContext';
@@ -56,19 +57,39 @@ const PetDetailPage = () => {
 
   // console.log(pet)
 
-  const petPhotos = pet.photos.map((photo, index) => (
-    <div key={index} className="w-[100%] flex flex-col sm:flex-row justify-c">
-      {photo.medium ? (
-        <img
-          src={photo.medium}
-          alt={pet.name}
-          className="max-h-[250px] object-contain object-center rounded-2xl"
-        />
-      ) : (
-        {placeholder}
-      )}
-    </div>
-  ));
+  const petPhotos = pet.photos && pet.photos.length > 0 ? (
+    <Carousel
+      className="pt-6 mb-0 sm:mb-5 text-center"
+      autoPlay
+      infiniteLoop
+      showArrows
+      showThumbs={true}
+      showIndicators={false}
+      showStatus={false}
+      interval={5000}
+    >
+      {pet.photos.map((photo, index) => (
+        <div key={index} className="w-[100%] flex flex-col sm:flex-row justify-c">
+          {photo.medium ? (
+            <img
+              src={photo.medium}
+              alt={pet.name}
+              className="max-h-[250px] object-contain object-center rounded-2xl"
+            />
+          ) : (
+            <img
+              src={placeholder}
+              alt={pet.name}
+              className="max-h-[250px] object-contain object-center rounded-2xl"
+            />
+          )}
+        </div>
+      ))}
+    </Carousel>
+  ) : (
+    <p>{placeholder}</p>
+  );
+  
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
@@ -93,24 +114,28 @@ const PetDetailPage = () => {
           { petPhotos }
         </Carousel>
       </div>
-      <div className=' w-[302px] text-left leading-8 mt-5'>
-        <p> <strong>Name:</strong> {pet.name}</p>
-        <p> <strong>Age:</strong> {pet.age}</p>
-        <p> <strong>Breed:</strong> {pet.breeds.primary}</p>
-        <p> <strong>Size:</strong> {pet.size}</p>
-        <p> <strong>Gender:</strong> {pet.gender}</p>
+      <div className='w-[302px] text-left leading-8 mt-5'>
+        <p><strong>Name:</strong> {pet.name}</p>
+        <p><strong>Age:</strong> {pet.age}</p>
+        <p><strong>Breed:</strong> {pet.breeds.primary}</p>
+        <p><strong>Size:</strong> {pet.size}</p>
+        <p><strong>Gender:</strong> {pet.gender}</p>
         {pet.description !== null && pet.description !== undefined && (
-        <p> <strong>Background:</strong> {pet.description}</p>)}
-        <p> <strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
-        <p> <strong>Attributes:</strong></p>
-        <div className="px-5" >
+          <p>
+            <strong>Background:</strong>{" "}
+            <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(pet.description) }} />
+          </p>
+        )}
+        <p><strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
+        <p><strong>Attributes:</strong></p>
+        <div className="px-5">
           <ul className='list-disc'>
             {Object.entries(pet.attributes).map(([key, value]) => (
               <li key={key}> {renameValue(key, value)} </li>
             ))}
           </ul>
         </div>
-        <p> <strong>Environment:</strong></p>
+        <p><strong>Environment:</strong></p>
         <div className="px-5">
           <ul className='list-disc'>
             {Object.entries(pet.environment).map(([key, value]) => (
@@ -118,8 +143,8 @@ const PetDetailPage = () => {
             ))}
           </ul>
         </div>
-
       </div>
+
       <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-7">
         <p className="text-left sm:text-center">
           If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
@@ -147,18 +172,10 @@ const PetDetailPage = () => {
                 <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">Canine Application <BsDownload /></button>
               </a>
             ) : null}
-
           </div>
-
         </div>
-
-
       </div>
-
-
-
     </div>
-
 
   );
 };
