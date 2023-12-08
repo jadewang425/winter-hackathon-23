@@ -56,15 +56,19 @@ const PetDetailPage = () => {
 
   // console.log(pet)
 
-  const petPhotos = pet.photos.map((photo) => (
-    <div className="w-[100%] flex flex-col sm:flex-row justify-c">
-      <img
-        src={photo.medium}
-        alt={pet.name}
-        className="max-h-[250px] object-contain object-center rounded-md"
-      />
+  const petPhotos = pet.photos.map((photo, index) => (
+    <div key={index} className="w-[100%] flex flex-col sm:flex-row justify-c">
+      {photo.medium ? (
+        <img
+          src={photo.medium}
+          alt={pet.name}
+          className="max-h-[250px] object-contain object-center rounded-2xl"
+        />
+      ) : (
+        {placeholder}
+      )}
     </div>
-  ))
+  ));
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
@@ -74,7 +78,7 @@ const PetDetailPage = () => {
 
         <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
       </div>
-      <div className="w-full flex relative overflow-hidden mt-7">
+      <div className="w-[304px] flex relative overflow-hidden mt-7 items-center justify-center" key={pet.id}>
         <Carousel
                 className="pt-6 mb-0 sm:mb-5 text-center"
                 autoPlay
@@ -84,6 +88,7 @@ const PetDetailPage = () => {
                 showIndicators={false}
                 showStatus={false}
                 interval={5000}
+
         >
           { petPhotos }
         </Carousel>
