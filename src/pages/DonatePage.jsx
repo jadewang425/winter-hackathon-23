@@ -3,7 +3,7 @@ import ExpandableDropdown from '../components/ExpandableDropdown';
 
 export default function DonatePage() {
     return (
-        <div className="w-full flex flex-col justify-center pt-2 font-[Poppins]">
+        <div className="w-full flex flex-col justify-center pt-2">
             <SectionHeader title="Donate Today" />
             <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
@@ -16,7 +16,7 @@ export default function DonatePage() {
                 </div>
             </div>
             <SectionHeader title="Donation Impact" />
-            <div className="mb-5">
+            <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
                 <div className="p-5">You can set it up TODAY with your bank to have an automatic check sent to our Post Office Box each month on the same day or you can set up monthly donations through PayPal. Every little bit helps!</div>
                 <div className="px-5">
                     <ul>
@@ -33,8 +33,8 @@ export default function DonatePage() {
             </div>
             <SectionHeader title="In-Kind Donation Wishlist" />
             <ExpandableDropdown title="Cleaning Supplies">
-                <div className="pl-10 pr-5">
-                    <ul className="list-disc">
+                <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
+                    <ul className="pl-10 pr-5 list-disc">
                         <li>Bleach</li>
                         <li>Pump Up 2 Gallon Sprayers</li>
                         <li>Disposable Gloves (any size)</li>
@@ -44,16 +44,16 @@ export default function DonatePage() {
                 </div>
             </ExpandableDropdown>
             <ExpandableDropdown title="Food">
-                <div className="pl-10 pr-5">
-                    <ul className="list-disc">
+                <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
+                    <ul className="pl-10 pr-5 list-disc">
                         <li>Canned Cat Food</li>
                         <li>Dry Dog Food (High Protein Retriever Brand from Tractor Supply)</li>
                     </ul>
                 </div>
             </ExpandableDropdown>
             <ExpandableDropdown title="Other">
-                <div className="pl-10 pr-5">
-                    <ul className="list-disc">
+                <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
+                    <ul className="pl-10 pr-5 list-disc">
                         <li>Baby Shampoo</li>
                         <li>Toilet Paper</li>
                         <li>Sandwich Size Zip Lock Bags</li>
@@ -71,8 +71,11 @@ export default function DonatePage() {
 
                 </div>
             </ExpandableDropdown>
-            <div className="font-bold p-5 mb-5">Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.</div>
-
+            <div className="flex flex-col max-w-6xl w-[100%] self-center mb-5">
+                <div className='font-bold p-5'>
+                    Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.
+                </div>
+            </div>
         </div>
     )
 }
