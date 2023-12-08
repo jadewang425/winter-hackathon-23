@@ -29,7 +29,7 @@ export default function AvailablePets() {
                 <PetContainer petType={cats} header='Available Cats' />
                 <PetContainer petType={dogs} header='Available Dogs' />
                 <Link to={`/adoption`} className="w-32 h-8 bg-[#E5BC01] text-[#214038] flex justify-center items-center rounded-2xl my-2">
-                    View All
+                    Adopt
                 </Link>
             </div>
         </div>

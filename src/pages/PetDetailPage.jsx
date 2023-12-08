@@ -62,7 +62,7 @@ const PetDetailPage = () => {
       autoPlay
       infiniteLoop
       showArrows
-      showThumbs={true}
+      showThumbs={false}
       showIndicators={false}
       showStatus={false}
       interval={5000}
