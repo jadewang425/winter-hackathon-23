@@ -1,4 +1,3 @@
-import DOMPurify from 'dompurify';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { usePet } from '../utilities/PetContext';
@@ -123,7 +122,7 @@ const PetDetailPage = () => {
         {pet.description !== null && pet.description !== undefined && (
           <p>
             <strong>Background:</strong>{" "}
-            <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(pet.description) }} />
+            <div dangerouslySetInnerHTML={{ __html: pet.description }} />
           </p>
         )}
         <p><strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
