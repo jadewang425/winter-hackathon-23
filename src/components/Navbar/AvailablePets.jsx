@@ -24,25 +24,29 @@ export default function AvailablePets() {
     }, [cats, dogs]);
 
     return (
-        <div className="w-full px-4 my-5 flex flex-col gap-1">
-            <div className="flex flex-col gap-1 ">
-                <h2 className="w-full text-left font-Poppins font-semibold text-16 pb-2">Available Cats</h2>
-                <div className="flex flex-row gap-6  overflow-x-scroll hide-scrollbar">
-                    {cats.map((cat, index) => (
-                        <PetCard pet={cat} key={index} />
-                    ))}
-
-                </div>
-
-            </div>
-            <div className="flex flex-col gap-1 ">
-                <h2 className="w-full text-left font-Poppins font-semibold text-16 pb-2">Available Dogs</h2>
-                <div className="flex flex-row gap-6  overflow-x-scroll .hide-scrollbar">
-                    {dogs.map((dog, index) => (
-                        <PetCard pet={dog} key={index} />
-                    ))}
-
-                </div>
+        <div className="w-full px-4 my-5 flex justify-center font-[Poppins]">
+            <div className="max-w-2xl flex flex-col gap-1 overflow-hidden  sm:w-full sm:items-start">
+                <PetContainer petType={cats} header='Available Cats' />
+                <PetContainer petType={dogs} header='Available Dogs' />
+                {/* <div className="flex flex-col gap-1 min-[450px]:w-full">
+                    <h2 className="w-full text-left font-Poppins font-semibold text-16 pb-2">Available Cats</h2>
+                    <div className="flex flex-row gap-6 min-[450px]:justify-center overflow-x-scroll hide-scrollbar">
+                        {cats.map((cat, index) => (
+                            <PetCard pet={cat} key={index} />
+                        ))}
+                    </div>
+                </div> */}
+                {/* <div className="flex flex-col gap-1 ">
+                    <h2 className="w-full text-left font-Poppins font-semibold text-16 pb-2">Available Dogs</h2>
+                    <div className="flex flex-row gap-6  overflow-x-scroll .hide-scrollbar">
+                        {dogs.map((dog, index) => (
+                            <PetCard pet={dog} key={index} />
+                        ))}
+                    </div>
+                    <Link to={`/adoption`}>
+                        <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl my-2"> View All</button>
+                    </Link>
+                </div> */}
                 <Link to={`/adoption`}>
                     <button type="submit" className="w-32 h-8 bg-[#E5BC01] rounded-2xl my-2"> View All</button>
                 </Link>
@@ -51,6 +55,19 @@ export default function AvailablePets() {
 
         </div>
     );
+}
+
+const PetContainer = ({petType, header}) => {
+    return (
+        <div className="flex flex-col gap-1 sm:w-full">
+            <h2 className="text-left font-Poppins font-semibold text-16 pb-2">{header}</h2>
+            <div className="flex flex-row gap-6 sm:justify-center overflow-x-scroll hide-scrollbar">
+                {petType.map((pet, index) => (
+                    <PetCard pet={pet} key={index} />
+                ))}
+            </div>
+        </div>
+    )
 }
 
 
