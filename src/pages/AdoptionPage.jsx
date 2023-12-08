@@ -111,12 +111,12 @@ const AdoptionPage = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-5 flex-1">
             <a href={canineFile} target="_blank" rel="noopener noreferrer">
-              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] text-[#214038] rounded-full py-[6px] w-[240px]">
                 Canine Application <BsDownload />
               </button>
             </a>
             <a href={felineFile} target="_blank" rel="noopener noreferrer">
-              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] rounded-full py-[6px] w-[240px]">
+              <button className="flex gap-5 justify-center items-center bg-[#E5BC01] text-[#214038] rounded-full py-[6px] w-[240px]">
                 Feline Application <BsDownload />
               </button>
             </a>

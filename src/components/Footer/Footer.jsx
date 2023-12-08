@@ -28,7 +28,7 @@ export default function Footer () {
                             </a>
                         </div>
                     </div>
-                    <button onClick={() => setOpen(!open)} className="bg-[#E5BC01] hover:bg-[#f8d36d] duration-200 text-black mt-2 rounded-full px-12 py-[2px]">501c(3)</button>
+                    <button onClick={() => setOpen(!open)} className="bg-[#E5BC01] hover:bg-[#f8d36d] duration-200 text-[#214038] mt-2 rounded-full px-12 py-[2px]">501c(3)</button>
                 </div>
                 <div>
                     <img src={BarkLogo} className='w-auto h-20 py-2' alt="Logo" />
