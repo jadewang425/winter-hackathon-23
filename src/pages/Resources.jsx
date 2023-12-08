@@ -6,13 +6,13 @@ const Resources = () => {
 
 
   return (
-    <div className='pt-2 font-[Poppins]'>
+    <div className='w-full flex flex-col justify-center pt-2'>
       <SectionHeader title='Resources' />
 
       <div className='pt-0.5'>
 
         <ExpandableDropdown title="Animal Rescue Help">
-          <div className='flex flex-col gap-10'>
+          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
             <div>
               Be sure to research different rescue groups in our state as there are many volunteers that help with transporting of animals in need.
             </div>
@@ -50,7 +50,7 @@ const Resources = () => {
         </ExpandableDropdown>
 
         <ExpandableDropdown title="Animal Rescue Locations">
-          <div className='flex flex-col gap-10'>
+          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
             <div>
               The Humane Society of West Louisiana
               <br />
@@ -90,7 +90,7 @@ const Resources = () => {
         </ExpandableDropdown>
 
         <ExpandableDropdown title="Spay & Neuter Locations">
-          <div className='flex flex-col gap-9'>
+          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
 
             <div>
               Low Cost Spay Neuter Opinions:
@@ -154,7 +154,7 @@ const Resources = () => {
         </ExpandableDropdown>
 
         <ExpandableDropdown title="Animal Cruelty">
-          <div className='flex flex-col gap-10'>
+          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
             <div>
               Top 10 Tips for Reporting Animal Cruelty
             </div>
@@ -203,7 +203,7 @@ const Resources = () => {
         </ExpandableDropdown>
 
         <ExpandableDropdown title="Lost & Found">
-          <div className='flex flex-col gap-10'>
+          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
             <div>
               Please Check on Facebook page regarding the Lost & Found.
               BARK shares any lost & found pets in the area.
