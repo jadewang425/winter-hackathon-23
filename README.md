@@ -16,8 +16,10 @@ Adoption page
 - Include Facebook page
 
 ### Next Steps
+- Desktop responsive design
 - Utilize Facebook API for latest Facebook posts
 - Utilize PayPal API for donation
+- Implement admin page and CRUD functions for content update
 
 ## Technologies Used
 - React.js

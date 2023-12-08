@@ -1,14 +1,21 @@
-export default function DonatePage () {
+import SectionHeader from '../components/SectionHeader'
+import ExpandableDropdown from '../components/ExpandableDropdown';
+
+export default function DonatePage() {
     return (
-        <div className="w-full flex-col justify-center">
-            <div className="font-bold p-3  bg-[#214038] text-white">Donate Today</div>
+        <div className="w-full flex-col justify-center pt-2">
+            <SectionHeader title="Donate Today" />
             <div className="mb-5 flex flex-col">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
                 <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
-                    <button className="w-full justify-center font-bold" href="http://barkanimalrescue.org/Donate">DONATE</button>
+                    <button className="w-full justify-center font-bold">
+                        <a target='_blank' href='http://barkanimalrescue.org/Donate'>
+                            DONATE
+                        </a>
+                    </button>
                 </div>
             </div>
-            <div className="font-bold p-3 bg-[#214038] text-white">Donation Impact</div>
+            <SectionHeader title="Donation Impact" />
             <div className="mb-5">
                 <div className="p-5">You can set it up TODAY with your bank to have an automatic check sent to our Post Office Box each month on the same day or you can set up monthly donations through PayPal. Every little bit helps!</div>
                 <div className="px-5">
@@ -24,28 +31,35 @@ export default function DonatePage () {
                     </ul>
                 </div>
             </div>
-            <div className="font-bold p-3 bg-[#214038] text-white">In-Kind Donation Wishlist</div>
-            <div className="flex p-5">
-                <div>
-                    <ul className="list-disc pl-3 pr-6">
+            <SectionHeader title="In-Kind Donation Wishlist" />
+            <ExpandableDropdown title="Cleaning Supplies">
+                <div className="pl-10 pr-5">
+                    <ul className="list-disc">
                         <li>Bleach</li>
                         <li>Pump Up 2 Gallon Sprayers</li>
                         <li>Disposable Gloves (any size)</li>
                         <li>Dawn Hand Soap</li>
                         <li>Antibacterial Hand Soap (any type)</li>
+                    </ul>
+                </div>
+            </ExpandableDropdown>
+            <ExpandableDropdown title="Food">
+                <div className="pl-10 pr-5">
+                    <ul className="list-disc">
+                        <li>Canned Cat Food</li>
+                        <li>Dry Dog Food (High Protein Retriever Brand from Tractor Supply)</li>
+                    </ul>
+                </div>
+            </ExpandableDropdown>
+            <ExpandableDropdown title="Other">
+                <div className="pl-10 pr-5">
+                    <ul className="list-disc">
                         <li>Baby Shampoo</li>
                         <li>Toilet Paper</li>
                         <li>Sandwich Size Zip Lock Bags</li>
                         <li>Towels, Sheets, Blankets</li>
                         <li>Cat Litter</li>
-                        <li>Canned Cat Food</li>
                         <li className="font-bold">Milk Bones (every dog gets a treat each morning- always in need of these)</li>
-                    </ul>
-
-                </div>
-                <div>
-                    <ul className="list-disc">
-                        <li>Dry Dog Food (High Protein Retriever Brand from Tractor Supply)</li>
                         <li>Large, X-Large, and XX-Large Kong Toys</li>
                         <li>Commercial no kinking 100 foot water hoses</li>
                         <li>Metal Water Hose Nozzles (Gilmore)</li>
@@ -53,11 +67,11 @@ export default function DonatePage () {
                         <li>Dog houses (New or Old)</li>
                         <li>Wal-Mart, Tractor Supply or Petsmart Gift Cards</li>
                         <li>Monetary Donations</li>
-                    </ul> 
+                    </ul>
 
                 </div>
-            </div>
-            <div className="font-bold mb-5 px-5">Please <a href="/about" className="underline text-blue-700">contact us</a> to set up a time to drop off donations.</div>
+            </ExpandableDropdown>
+            <div className="font-bold p-5 mb-5">Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.</div>
 
         </div>
     )
