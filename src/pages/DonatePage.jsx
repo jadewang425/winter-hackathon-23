@@ -3,9 +3,9 @@ import ExpandableDropdown from '../components/ExpandableDropdown';
 
 export default function DonatePage() {
     return (
-        <div className="w-full flex-col justify-center pt-2 font-[Poppins]">
+        <div className="w-full flex flex-col justify-center pt-2 font-[Poppins]">
             <SectionHeader title="Donate Today" />
-            <div className="mb-5 flex flex-col">
+            <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
                 <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
                 <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
                     <button className="w-full justify-center font-bold">
