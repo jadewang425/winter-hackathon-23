@@ -4,7 +4,7 @@ import { usePet } from '../utilities/PetContext';
 import placeholder from '../assets/imgHolder.svg'
 import SectionHeader from "../components/SectionHeader";
 import BarkLogo from '../assets/BarkLogo.svg'
-import arrow from '../assets/arrow.svg'
+import arrow from '../assets/Arrow.svg'
 import { BsDownload } from "react-icons/bs";
 import { Carousel } from 'react-responsive-carousel';
 import canineFile from '../assets/barkadoptionformcanine.pdf'
