@@ -72,14 +72,16 @@ const PetContainer = ({petType, header}) => {
 
 
 const PetCard = ({pet}) => {
+    const lastKeyOfFirstPhotoArray = pet.photos?.[0] ? Object.keys(pet.photos[0]).pop() : null;
+    const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
     return (
-        <div key={pet.id} className="flex flex-col items-left pb-4">
+        <div key={pet.id} className="flex flex-col items-left pb-4 ">
             <Link to={`/adoption/${pet.id}`} className="font-Poppins font-normal text-16 pt-3 text-left">
                 <img
-                    src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
+                    src={lastPhotoUrl}
                     alt={pet.name}
-                    style={{ width: '110px', height: '85px', borderRadius: '16px' }}
-                    className="object-cover object-center"
+                    style={{ borderRadius: '16px' }}
+                    className="object-cover object-center max-w-[140px] w-[135px] h-[150px]"
                 />
                 <p>{pet.name},</p> <p>{pet.age}</p>
             </Link>
