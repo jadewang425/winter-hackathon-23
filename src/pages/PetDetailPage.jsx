@@ -120,10 +120,10 @@ const PetDetailPage = () => {
         <p><strong>Size:</strong> {pet.size}</p>
         <p><strong>Gender:</strong> {pet.gender}</p>
         {pet.description !== null && pet.description !== undefined && (
-          <p>
+          <div>
             <strong>Background:</strong>{" "}
             <div dangerouslySetInnerHTML={{ __html: pet.description }} />
-          </p>
+          </div>
         )}
         <p><strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
         <p><strong>Attributes:</strong></p>
