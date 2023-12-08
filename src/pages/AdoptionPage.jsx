@@ -45,7 +45,7 @@ const AdoptionPage = () => {
 
 
   return (
-    <div className='max-w-[100%] flex flex-col items-center pt-5 font-[Poppins]'>
+    <div className='max-w-[100%] flex flex-col items-center pt-2 font-[Poppins]'>
       <SectionHeader title='Find a Pet' />
       <div className="max-w-6xl  w-full flex flex-col gap-[20px] my-7 px-5">
         <h1 className="font-semibold text-[rgb(18,18,18)]  ml-1 "> Find your new best friend today! </h1>
@@ -81,10 +81,12 @@ const AdoptionPage = () => {
           </button>
           {error && <p>{error}</p>}
           {pets && (
-            <div className="w-full flex flex-col justify-start items-center gap-8 mt-5">
+
+            <div className="w-full flex flex-wrap justify-center items-center gap-8 mt-5">
               {pets.map((pet) => (
                 <PetCard key={pet.id} pet={pet} />
               ))}
+
             </div>
           )}
         </div>

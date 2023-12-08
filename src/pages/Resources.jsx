@@ -6,10 +6,10 @@ const Resources = () => {
 
 
   return (
-    <div >
+    <div className='pt-2'>
       <SectionHeader title='Resources' />
 
-      <div className=''>
+      <div className='pt-0.5'>
 
         <ExpandableDropdown title="Animal Rescue Help">
           <div className='flex flex-col gap-10'>
@@ -41,7 +41,7 @@ const Resources = () => {
               Helpful article to read on how to adopt out your personal pet or a stray into the right a new home.
             </div>
 
-            <a className="font-bold text-[#E5BC01]" href='http://bestfriends.org/uploadedFiles/Content/Resources/Resources_for_Rescuers/Adoption/HowtoFindHomesforHomelessPets.pdf'>
+            <a className="font-bold text-[#7F3F98]" href='http://bestfriends.org/uploadedFiles/Content/Resources/Resources_for_Rescuers/Adoption/HowtoFindHomesforHomelessPets.pdf'>
               Learn More!
             </a>
             <div>
@@ -58,9 +58,9 @@ const Resources = () => {
               <br />
               DeRidder, LA 70634
               <br />
-              Phone: <a className="font-bold text-[#E5BC01]" href='tel:337-462-3321'>(337) 462-3321</a>
+              Phone: <a className="font-bold text-[#7F3F98]" href='tel:337-462-3321'>(337) 462-3321</a>
               <br />
-              <a className="font-bold text-[#E5BC01]" href='www.facebook.com/HumaneSocietyofWestLouisiana'>
+              <a className="font-bold text-[#7F3F98]" href='www.facebook.com/HumaneSocietyofWestLouisiana'>
                 Facebook
               </a>
               <br />
@@ -71,11 +71,11 @@ const Resources = () => {
             <div>
               Labs 4 Rescue
               <br />
-              <a className="font-bold text-[#E5BC01]" href='www.labs4rescue.com'>
+              <a className="font-bold text-[#7F3F98]" href='www.labs4rescue.com'>
                 www.labs4rescue.com
               </a>
               <br />
-              <a className="font-bold text-[#E5BC01]" href='mailto:keri4labs@gmail.com'>
+              <a className="font-bold text-[#7F3F98]" href='mailto:keri4labs@gmail.com'>
                 Keri4labs@gmail.com
               </a>
               <br />
@@ -103,11 +103,11 @@ const Resources = () => {
               <br />
               Shreveport, Louisiana 71104
               <br />
-              <a className="font-bold text-[#E5BC01]" href='tel:318-221-0017'>
+              <a className="font-bold text-[#7F3F98]" href='tel:318-221-0017'>
                 318-221-0017
               </a>
               <br />
-              <a className="font-bold text-[#E5BC01]" href='www.robinsonrescue.org'>
+              <a className="font-bold text-[#7F3F98]" href='www.robinsonrescue.org'>
                 www.robinsonrescue.org
               </a>
             </div>
@@ -119,15 +119,15 @@ const Resources = () => {
               <br />
               Lafayette, LA 70506
               <br />
-              <a className="font-bold text-[#E5BC01]" href='tel:337-264-1088'>
+              <a className="font-bold text-[#7F3F98]" href='tel:337-264-1088'>
                 (337) 264-1088
               </a>
               <br />
-              <a className="font-bold text-[#E5BC01]" href='mailto:spaynation@gmail.com'>
+              <a className="font-bold text-[#7F3F98]" href='mailto:spaynation@gmail.com'>
                 spaynation@gmail.com
               </a>
               <br />
-              <a className="font-bold text-[#E5BC01]" href='www.spaynation.net'>
+              <a className="font-bold text-[#7F3F98]" href='www.spaynation.net'>
                 www.spaynation.net
               </a>
             </div>
@@ -139,11 +139,11 @@ const Resources = () => {
               <br />
               Alexandria, LA 71306
               <br />
-              <a className="font-bold text-[#E5BC01]" href='www.cenlaanimals.com'>
+              <a className="font-bold text-[#7F3F98]" href='www.cenlaanimals.com'>
                 www.cenlaanimals.com
               </a>
               <br />
-              <a className="font-bold text-[#E5BC01]" href='tel:318-443-0010'>
+              <a className="font-bold text-[#7F3F98]" href='tel:318-443-0010'>
                 318-443-0010
               </a>
               <br />
