@@ -25,7 +25,7 @@ export default function AvailablePets() {
 
     return (
         <div className="w-full px-4 my-5 flex justify-center font-[Poppins]">
-            <div className="max-w-2xl flex flex-col gap-1 overflow-hidden  sm:w-full sm:items-start">
+            <div className="max-w-2xl flex flex-col gap-1 overflow-hidden  sm:w-full sm:items-center">
                 <PetContainer petType={cats} header='Available Cats' />
                 <PetContainer petType={dogs} header='Available Dogs' />
                 {/* <div className="flex flex-col gap-1 min-[450px]:w-full">
