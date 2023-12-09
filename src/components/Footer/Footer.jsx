@@ -10,11 +10,17 @@ export default function Footer () {
 
     return (
         <div className="w-full p-5 flex flex-col bg-[#214038] text-white font-[Poppins]">
-            <div className="flex justify-between items-center">
+            <div className="w-[100%] flex justify-between items-center max-w-6xl self-center">
                 <div className="flex flex-col justify-between">
-                    <div>
-                        <div className="hover:underline"><Link to="/about">About Us</Link></div>
-                        <div className="hover:underline"><Link to="/donate">Donate</Link></div>
+                    <div className="flex">
+                        <div>
+                            <div className="hover:underline"><Link to="/about">About Us</Link></div>
+                            <div className="hover:underline"><Link to="/donate">Donate</Link></div>
+                        </div>
+                        <div className="pl-10">
+                            <div className="hover:underline"><Link to="/adopt">Adopt</Link></div>
+                            <div className="hover:underline"><Link to="/resources">Resources</Link></div>
+                        </div>
                     </div>
                     <div className="flex mt-3">
                         <div className="pr-2">
