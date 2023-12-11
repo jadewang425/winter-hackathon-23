@@ -12,7 +12,7 @@ export const PetProvider = ({ children }) => {
     const fetchData = async () => {
       await checkToken();
       if (token) {
-        const data = await getPetByType('', '71301');
+        const data = await getPetByType('', 'alexandria, la');
         setHomePets(data);
       }
     };
@@ -27,7 +27,7 @@ export const PetProvider = ({ children }) => {
       const tokenData = JSON.parse(atob(storedToken.split('.')[1]));
       const expirationTime = tokenData.exp * 1000;
       const currentTime = new Date().getTime();
-      console.log('token has been checked')
+
 
       if (expirationTime > currentTime) {
         setToken(storedToken);

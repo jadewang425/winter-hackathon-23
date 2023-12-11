@@ -80,12 +80,10 @@ const AdoptionPage = () => {
           </button>
           {error && <p>{error}</p>}
           {pets && (
-
             <div className="w-full flex flex-wrap justify-center items-center gap-8 mt-5">
               {pets.map((pet) => (
                 <PetCard key={pet.id} pet={pet} />
               ))}
-
             </div>
           )}
         </div>
@@ -137,7 +135,6 @@ const PetCard = ({ pet }) => {
       <div className="w-[220px] sm:w-[300px] sm:h-[350px] h-[250px] relative overflow-hidden">
         <img
           src={lastPhotoUrl}
-          // src={pet.photos.length > 0 && pet.photos[0].small ? pet.photos[0].small : placeholder}
           alt={pet.name}
           className="w-[100%] h-[100%] object-cover object-center rounded-xl"
         />
