@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { usePet } from "../../utilities/PetContext"
 import placeholder from '../../assets/imgHolder.svg'
 export default function AvailablePets() {
-    const { homePets } = usePet();
-    const [dogs, setDogs] = useState([]);
-    const [cats, setCats] = useState([]);
+
+const { homePets } = usePet();
+const [dogs, setDogs] = useState([]);
+const [cats, setCats] = useState([]);
 
     useEffect(() => {
         if (homePets) {

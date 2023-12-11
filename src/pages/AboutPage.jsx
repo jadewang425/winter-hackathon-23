@@ -1,11 +1,9 @@
-import React from 'react'
 import SectionHeader from "../components/SectionHeader"
 import img1 from '../assets/about_1.jpg'
 import img2 from '../assets/about_2.jpg'
 import img3 from '../assets/about_3.jpg'
 
 const AboutPage = () => {
-
 
   return (
     <div className='max-w-[100%] flex flex-col items-center pt-2 font-[Poppins]' >
@@ -17,7 +15,6 @@ const AboutPage = () => {
               Husband and wife team, Julian and Eva Long, have rescued animals all of their lives, but one day in 2004, when Julian was exposed to a local animal shelter’s day of euthanasia, he adopted ten dogs from “Death Row” and the two have
               never looked back.
             </p>
-
           </div>
           <div className='flex justify-center items-center w-full h-[15rem] sm:w-full'>
             <img src={img1} alt="A Dog being examined" />
@@ -48,7 +45,6 @@ const AboutPage = () => {
           <p className="font-bold text-[#121212] font-[Poppins] text-sm mb-3">Boudreaux’s Animal Rescue Krewe (B.A.R.K.) is a 501c(3) non-profit animal welfare organization and NO-KILL animal shelter in Alexandria, Louisiana. </p>
         </div>
       </div>
-
     </div>
   )
 }

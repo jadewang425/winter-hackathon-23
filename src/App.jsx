@@ -13,7 +13,6 @@ import ContactUs from './pages/ContactUs'
 
 function App() {
 
-
   return (
     <PetProvider>
       <main className='main pt-[90px]'>

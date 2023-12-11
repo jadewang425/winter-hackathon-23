@@ -80,12 +80,10 @@ const AdoptionPage = () => {
           </button>
           {error && <p>{error}</p>}
           {pets && (
-
             <div className="w-full flex flex-wrap justify-center items-center gap-8 mt-5">
               {pets.map((pet) => (
                 <PetCard key={pet.id} pet={pet} />
               ))}
-
             </div>
           )}
         </div>
