@@ -24,7 +24,7 @@ const ExpandableDropdown = ({ title, children }) => {
       <AnimatePresence>
         {isExpanded && (
           <motion.div 
-            className='px-5 py-2'
+            className='px-5 py-2 flex justify-center'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0 }}

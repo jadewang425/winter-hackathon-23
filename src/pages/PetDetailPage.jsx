@@ -57,34 +57,37 @@ const PetDetailPage = () => {
   // console.log(pet)
 
   const petPhotos = pet.photos && pet.photos.length > 0 ? (
-    <Carousel
-      className="pt-6 mb-0 sm:mb-5 text-center"
-      autoPlay
-      infiniteLoop
-      showArrows
-      showThumbs={true}
-      showIndicators={false}
-      showStatus={false}
-      interval={5000}
-    >
-      {pet.photos.map((photo, index) => (
-        <div key={index} className="w-[100%] flex flex-col sm:flex-row justify-c">
-          {photo.medium ? (
-            <img
-              src={photo.medium}
-              alt={pet.name}
-              className="max-h-[250px] object-contain object-center rounded-2xl"
-            />
-          ) : (
-            <img
-              src={placeholder}
-              alt={pet.name}
-              className="max-h-[250px] object-contain object-center rounded-2xl"
-            />
-          )}
-        </div>
-      ))}
-    </Carousel>
+    <div className='flex justify-center items-center'>
+      <Carousel
+        className="pt-6 mb-0 sm:mb-5 text-center"
+        autoPlay
+        infiniteLoop
+        showArrows
+        showThumbs={true}
+        showIndicators={false}
+        showStatus={false}
+        interval={5000}
+      >
+        {pet.photos.map((photo, index) => (
+          <div key={index} className="w-[100%] flex sm:flex-row justify-center rounded-2xl items-center">
+            {photo.medium ? (
+              <img
+                src={photo.medium}
+                alt={pet.name}
+                className="max-h-[250px] object-contain object-center rounded-2xl"
+              />
+            ) : (
+              <img
+                src={placeholder}
+                alt={pet.name}
+                className="max-h-[250px] object-contain object-center rounded-2xl"
+              />
+            )}
+          </div>
+        ))}
+      </Carousel>
+
+    </div>
   ) : (
     <p>{placeholder}</p>
   );
@@ -97,9 +100,9 @@ const PetDetailPage = () => {
       <div className='flex items-center w-[380px] text-left leading-4 mt-10'>
         <img src={arrow} alt="arrow" className="transform rotate-90 mr-2 w-4 h-4" />
 
-        <a href="#" onClick={() => navigate(-1)}>Return to previous page</a>
+        <a href="#" onClick={() => navigate(-1)}>back previous page</a>
       </div>
-      <div className="w-[304px] flex relative overflow-hidden mt-7 items-center justify-center" key={pet.id}>
+      <div className="w-full flex relative  mt-7 items-center justify-center" key={pet.id}>
         <Carousel
           className="pt-6 mb-0 sm:mb-5 text-center"
           autoPlay
@@ -115,7 +118,8 @@ const PetDetailPage = () => {
         </Carousel>
       </div>
       <div className='w-[302px] text-left leading-8 mt-5'>
-        <p><strong>Name:</strong> {pet.name}</p>
+      <p className="tracking-wide"><strong>Name:</strong> {pet.name}</p>
+
         <p><strong>Age:</strong> {pet.age}</p>
         <p><strong>Breed:</strong> {pet.breeds.primary}</p>
         <p><strong>Size:</strong> {pet.size}</p>

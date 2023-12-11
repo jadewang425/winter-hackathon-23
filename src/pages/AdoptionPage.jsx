@@ -29,7 +29,6 @@ const AdoptionPage = () => {
     try {
       setError("");
       const petsByType = await getPetByType(petType, zipcode, gender, age, size);
-      console.log(petsByType)
       const filteredPets = petsByType.filter((pet) => pet.photos.length > 0)
       if (filteredPets.length === 0 ) {
         setPets(petsByType);
