@@ -12,8 +12,8 @@ const ExpandableDropdown = ({ title, children }) => {
   };
 
   return (
-    <motion.div animate={isExpanded ? "open" : "closed"} >
-      <div className='bg-[#214038]/80 px-5 py-2 border-b-2 border-[#f9f9f9] text-white font-bold flex justify-between items-center' onClick={handleToggle} style={{ cursor: 'pointer' }}>
+    <motion.div animate={isExpanded ? "open" : "closed"}  className='w-full bg-[#214038]/80 flex justify-center items-center flex-col  border-b-2 border-[#f9f9f9]' >
+      <div className='max-w-6xl w-full px-0 py-2 text-white font-bold flex justify-between items-center' onClick={handleToggle} style={{ cursor: 'pointer' }}>
         {title}
         <motion.div variants={iconVariants}>
           <IoIosArrowDown />
@@ -24,7 +24,7 @@ const ExpandableDropdown = ({ title, children }) => {
       <AnimatePresence>
         {isExpanded && (
           <motion.div 
-            className='px-5 py-2 flex justify-center'
+            className='py-2 flex justify-center bg-white w-full'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0 }}
