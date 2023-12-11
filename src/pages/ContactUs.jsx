@@ -41,7 +41,6 @@ const ContactUs = () => {
   return (
     <div>
       <div className='pt-2'>
-
         <SectionHeader title='Find Us' />
         <div className='w-full flex justify-center items-center p-5 my-5'>
           <div className='w-full  max-w-6xl flex flex-col gap-5 md:flex-row'>
@@ -66,11 +65,10 @@ const ContactUs = () => {
           </div>
         </div>
 
-
         <SectionHeader title='Contact Form' />
 
-        <div className=' w-full flex justify-center items-center p-5 my-5 font-[Poppins]'>
-          <form className="w-full max-w-4xl flex flex-col justify-center items-center gap-5" onSubmit={handleSubmit}>
+        <div className='max-w-4xl w-full flex justify-center items-center p-5 my-5 font-[Poppins]'>
+          <form className="w-full flex flex-col justify-center items-center gap-5" onSubmit={handleSubmit}>
             <div className="w-full flex flex-col justify-center items-center gap-5">
               <div className='flex flex-col justify-center gap-5 w-full min-[450px]:flex-row '>
                 <input type="text" className="border-b-2 border-red bg-white p-2 flex-1 focus:outline-none focus:border-green-500" placeholder="First Name" ref={firstNameRef} />
@@ -87,12 +85,11 @@ const ContactUs = () => {
               <button className="bg-[#E5BC01] mt-4 text-[#214038] hover:bg-green-600 py-[10px] px-[30px] w-[250px] rounded-full focus:outline-none focus:shadow-outline-green active:bg-green-700" type='submit' value="Send">
                 Submit
               </button>
-            </div>
+          </div>
           </form>
         </div>
       </div>
     </div>
   )
 }
-
 export default ContactUs
