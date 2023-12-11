@@ -88,11 +88,10 @@ const PetDetailPage = () => {
     <p>{placeholder}</p>
   );
 
-
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="max-w-[100%] flex flex-col justify-center items-center pt-2 font-[Poppins]">
       <SectionHeader title={pet.name} />
-      <div className='flex items-center w-[380px] text-left leading-4 mt-10'>
+      <div className='flex items-center w-[380px] text-left leading-4 mt-10 md:w-5/6 lg:w-2/3 xl:w-3/4 2xl:w-2/3'>
         <img src={arrow} alt="arrow" className="transform rotate-90 mr-2 w-4 h-4" />
         <a href="#" onClick={() => navigate(-1)}>back previous page</a>
       </div>
