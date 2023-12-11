@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { usePet } from "../../utilities/PetContext"
 import placeholder from '../../assets/imgHolder.svg'
 export default function AvailablePets() {
-    const { homePets } = usePet();
-    const [dogs, setDogs] = useState([]);
-    const [cats, setCats] = useState([]);
+
+const { homePets } = usePet();
+const [dogs, setDogs] = useState([]);
+const [cats, setCats] = useState([]);
 
     useEffect(() => {
         if (homePets) {
@@ -17,10 +18,6 @@ export default function AvailablePets() {
             setCats(cats.slice(0,3))
         }
     }, [homePets]);
-    // useEffect(() => {
-    //     console.log('CATS',cats)
-    //     console.log('DOGS',dogs)
-    // }, [cats, dogs]);
 
     return (
         <div className="w-full px-4 my-5 flex justify-center font-[Poppins]">
@@ -32,7 +29,7 @@ export default function AvailablePets() {
                 </Link>
             </div>
         </div>
-        );
+    );
 }
 
 const PetContainer = ({petType, header}) => {
@@ -54,19 +51,19 @@ const PetCard = ({pet}) => {
     const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
     return (
         <div key={pet.id} className="flex flex-col items-left pb-4 gap-4 sm:flex-1 sm:items-center">
-                    <Link to={`/adoption/${pet.id}`} className="flex-1" >
-                            <img
-                                src={lastPhotoUrl}
-                                alt={pet.name}
-                                style={{ borderRadius: '16px' }}
-                                className="object-cover object-center max-w-[140px] w-[135px] h-[160px] sm:h-[210px] sm:max-w-[200px] sm:w-[190px]"
-                            />
-                    </Link>
-                    <div className="sm:hidden">
-                        <p className="leading-5">{pet.name},</p> 
-                        <p className="leading-5 ">{pet.age}</p>
-                    </div>
-                    <p className="max-sm:hidden">{pet.name}, {pet.age}</p>
+            <Link to={`/adoption/${pet.id}`} className="flex-1" >
+                <img
+                    src={lastPhotoUrl}
+                    alt={pet.name}
+                    style={{ borderRadius: '16px' }}
+                    className="object-cover object-center max-w-[140px] w-[135px] h-[160px] sm:h-[210px] sm:max-w-[200px] sm:w-[190px]"
+                />
+            </Link>
+            <div className="sm:hidden">
+                <p className="leading-5">{pet.name},</p> 
+                <p className="leading-5 ">{pet.age}</p>
             </div>
+            <p className="max-sm:hidden">{pet.name}, {pet.age}</p>
+        </div>
     )
 }

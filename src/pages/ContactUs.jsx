@@ -41,7 +41,6 @@ const ContactUs = () => {
   return (
     <div>
       <div className='pt-2'>
-
         <SectionHeader title='Find Us' />
         <div className='max-w-6xl w-full flex flex-col justify-start gap-5 items-start sm:items-center sm:flex-row p-5 my-5'>
           <div className="w-full self-center">
@@ -64,9 +63,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-
         <SectionHeader title='Contact Form' />
-
         <div className='max-w-4xl w-full flex justify-center items-center p-5 my-5 font-[Poppins]'>
           <form className="w-full flex flex-col justify-center items-center gap-5" onSubmit={handleSubmit}>
             <div className="w-full flex flex-col justify-center items-center gap-5">
@@ -85,12 +82,11 @@ const ContactUs = () => {
               <button className="bg-[#E5BC01] mt-4 text-[#214038] hover:bg-green-600 py-[10px] px-[30px] w-[250px] rounded-full focus:outline-none focus:shadow-outline-green active:bg-green-700" type='submit' value="Send">
                 Submit
               </button>
-            </div>
+          </div>
           </form>
         </div>
       </div>
     </div>
   )
 }
-
 export default ContactUs

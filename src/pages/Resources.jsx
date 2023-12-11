@@ -4,7 +4,6 @@ import SectionHeader from '../components/SectionHeader';
 
 const Resources = () => {
 
-
   return (
     <div className='w-full flex flex-col justify-center pt-2'>
       <SectionHeader title='Resources' />
