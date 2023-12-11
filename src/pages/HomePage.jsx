@@ -14,10 +14,10 @@ const HomePage = () => {
       <Mission />
       <AvailablePets />
       <Facebook />
-      <div className="w-full p-5 max-w-xs flex justify-center">
+      <div className="p-5 flex justify-center">
         <div className="text-center">
           If you have any question, please contact us{' '}
-          <Link to='/contactUs' className="font-bold text-[#7F3F98]">Here</Link>!
+          <Link to='/contactUs' className="font-semibold text-[#7F3F98]">Here</Link>!
         </div>
       </div>
     </div>
