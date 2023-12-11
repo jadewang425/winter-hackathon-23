@@ -5,7 +5,6 @@ import AboutPage from './pages/AboutPage'
 import AdoptionPage from './pages/AdoptionPage'
 import DonatePage from './pages/DonatePage'
 import PetDetailPage from './pages/PetDetailPage'
-// import { Link } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar'
 import { PetProvider } from './utilities/PetContext'
 import Footer from './components/Footer/Footer'
