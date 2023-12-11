@@ -46,11 +46,11 @@ const PetContainer = ({petType, header}) => {
 
 
 const PetCard = ({pet}) => {
-    const lastKeyOfFirstPhotoArray = pet.photos?.[0] ? Object.keys(pet.photos[0]).pop() : null;
+    const lastKeyOfFirstPhotoArray = pet.photos?.[0] ? Object.keys(pet.photos[0]).pop() : placeholder;
     const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
     return (
         <div key={pet.id} className="flex flex-col items-left pb-4 gap-4 sm:flex-1 sm:items-center">
-            <Link to={`/adoption/${pet.id}`} className="flex-1" >
+            <Link to={`/adoption/${pet.id}`} className="flex-1 font-Poppins font-normal text-16" >
                 <img
                     src={lastPhotoUrl}
                     alt={pet.name}
