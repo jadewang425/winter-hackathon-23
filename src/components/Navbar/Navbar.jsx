@@ -20,21 +20,11 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='flex gap-5 text-[#F9F9F9] max-md:hidden'>
-                    <NavLink to="/about">
-                        About Bark
-                    </NavLink>
-                    <NavLink to="/adoption">
-                        Adopt
-                    </NavLink>
-                    <NavLink to="/donate">
-                        Donate
-                    </NavLink>
-                    <NavLink to="/resources">
-                        Resources
-                    </NavLink>
-                    <NavLink to="/contactUs">
-                        Contact Us
-                    </NavLink>
+                    <NavLink to="/about">About Bark</NavLink>
+                    <NavLink to="/adoption">Adopt</NavLink>
+                    <NavLink to="/donate">Donate</NavLink>
+                    <NavLink to="/resources">Resources</NavLink>
+                    <NavLink to="/contactUs"> Contact Us</NavLink>
                 </div>
                 <div className='text-2xl text-[#FFF] md:hidden cursor-pointer' onClick={() => setOpen(true)}>
                     <IoMdMenu />
