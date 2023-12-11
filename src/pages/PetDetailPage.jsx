@@ -48,13 +48,10 @@ const PetDetailPage = () => {
         return value != null ? (value ? 'Children: Yes' : 'Children: No') : 'Children: Unknown';
       case 'dogs':
         return value != null ? (value ? 'Dogs: Yes' : 'Dogs: No') : 'Dogs: Unknown';
-      // default:
-      //   return value != null ? value.toString() : ': Unknown';
     }
   }
-  console.log('PET DETAIL', pet)
 
-  // console.log(pet)
+
 
   const petPhotos = pet.photos && pet.photos.length > 0 ? (
     <div className='flex justify-center items-center'>

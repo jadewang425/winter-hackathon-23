@@ -17,10 +17,6 @@ export default function AvailablePets() {
             setCats(cats.slice(0,3))
         }
     }, [homePets]);
-    // useEffect(() => {
-    //     console.log('CATS',cats)
-    //     console.log('DOGS',dogs)
-    // }, [cats, dogs]);
 
     return (
         <div className="w-full px-4 my-5 flex justify-center font-[Poppins]">
