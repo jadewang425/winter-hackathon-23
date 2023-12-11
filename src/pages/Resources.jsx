@@ -11,7 +11,7 @@ const Resources = () => {
       <div className='pt-0.5'>
 
         <ExpandableDropdown title="Animal Rescue Help">
-          <div className='mb-5 py-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
+          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
             <div>
               Be sure to research different rescue groups in our state as there are many volunteers that help with transporting of animals in need.
             </div>
