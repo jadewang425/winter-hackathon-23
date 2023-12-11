@@ -12,7 +12,7 @@ export const PetProvider = ({ children }) => {
     const fetchData = async () => {
       await checkToken();
       if (token) {
-        const data = await getPetByType('', '71301');
+        const data = await getPetByType('', 'alexandria, la');
         setHomePets(data);
       }
     };
