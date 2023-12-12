@@ -32,12 +32,12 @@ export default function Footer () {
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col md:items-center">
+                    <div className="flex flex-col justify-center md:items-center">
                         <div className="flex justify-end md:hidden">
                             <img src={BarkLogo} className='w-auto h-20 py-2' alt="Logo" />
                         </div>
                         <div>
-                            <button onClick={() => setOpen(!open)} className="bg-[#E5BC01] hover:bg-[#f8d36d] duration-200 text-[#214038] rounded-full px-12 py-[2px] md:col-span-1 w-[200px]">501c(3)</button>
+                            <button onClick={() => setOpen(!open)} className="bg-[#E5BC01] hover:bg-[#f8d36d] duration-200 text-[#214038] rounded-full md:col-span-1 flex justify-center items-center px-5 py-1 md:px-10">501c(3)</button>
                         </div>
                     </div>
                 </div>
