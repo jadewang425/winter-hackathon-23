@@ -63,7 +63,7 @@ const PetDetailPage = () => {
         return value != null ? (value ? 'Dogs: Yes' : 'Dogs: No') : 'Dogs: Unknown';
     }
   }
-
+  
   return (
     <div className="w-full flex flex-col justify-center items-center pt-2 overflow-hidden">
       <SectionHeader title={pet.name} />
