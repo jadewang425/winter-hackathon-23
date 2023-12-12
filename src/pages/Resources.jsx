@@ -1,4 +1,3 @@
-import React from 'react'
 import ExpandableDropdown from '../components/ExpandableDropdown';
 import SectionHeader from '../components/SectionHeader';
 
@@ -7,12 +6,8 @@ const Resources = () => {
   return (
     <div className='w-full flex flex-col justify-center pt-2'>
       <SectionHeader title='Resources' />
-
-      <div className='pt-0.5'>
-
-        <ExpandableDropdown title="Animal Rescue Help">
-          <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>
-            <div>
+      <div className="my-5 px-5 flex flex-col max-w-6xl w-[100%] self-center gap-5">
+          <div>
               Be sure to research different rescue groups in our state as there are many volunteers that help with transporting of animals in need.
             </div>
 
@@ -43,10 +38,9 @@ const Resources = () => {
             <a className="font-bold text-[#7F3F98]" href='http://bestfriends.org/uploadedFiles/Content/Resources/Resources_for_Rescuers/Adoption/HowtoFindHomesforHomelessPets.pdf'>
               Learn More!
             </a>
-            <div>
-            </div>
-          </div>
-        </ExpandableDropdown>
+      </div>
+
+      <div className='pt-0.5'>
 
         <ExpandableDropdown title="Animal Rescue Locations">
           <div className='mb-5 p-5 flex flex-col max-w-6xl w-[100%] self-center gap-10'>

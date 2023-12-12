@@ -1,18 +1,17 @@
 import SectionHeader from '../components/SectionHeader'
 import ExpandableDropdown from '../components/ExpandableDropdown';
+import { Link } from 'react-router-dom';
 
 export default function DonatePage() {
     return (
         <div className="w-full flex flex-col justify-center pt-2">
             <SectionHeader title="Donate Today" />
             <div className="mb-5 flex flex-col max-w-6xl w-[100%] self-center">
-                <div className="p-5">Donate today, every dollar counts! You can make a one time donation or can set up monthly donations to increase your impact. See how below.</div>
+                <div className="p-5">Donate today, every dollar counts! You can make a one time donation or you can set up monthly donations to increase your impact. See how below.</div>
                 <div className="w-[100px] bg-[#E5BC01] text-[#214038] rounded-full self-center">
-                    <button className="w-full justify-center font-bold">
-                        <a target='_blank' href='http://barkanimalrescue.org/Donate'>
-                            DONATE
-                        </a>
-                    </button>
+                    <a target='_blank' href='http://barkanimalrescue.org/Donate' rel="noreferrer" className="bg-[#E5BC01] mt-4 text-[#214038] font-semibold hover:bg-[#f8d36d] py-[10px] px-[30px]  rounded-full focus:outline-none focus:shadow-outline-green active:bg-green-700">
+                        DONATE
+                    </a>
                 </div>
             </div>
             <SectionHeader title="Donation Impact" />
@@ -73,7 +72,7 @@ export default function DonatePage() {
             </ExpandableDropdown>
             <div className="flex flex-col max-w-6xl w-[100%] self-center mb-5">
                 <div className='font-bold p-5'>
-                    Please <a href="/about" className="text-[#7F3F98]">contact us</a> to set up a time to drop off donations.
+                    Please <Link to="/contactUs" className="text-[#7F3F98]">contact us</Link> to set up a time to drop off donations.
                 </div>
             </div>
         </div>
