@@ -6,20 +6,34 @@ import SectionHeader from "../components/SectionHeader";
 import BarkLogo from '../assets/BarkLogo.svg'
 import arrow from '../assets/Arrow.svg'
 import { BsDownload } from "react-icons/bs";
-import { Carousel } from 'react-responsive-carousel';
 import canineFile from '../assets/barkadoptionformcanine.pdf'
 import felineFile from '../assets/barkadoptionformfeline.pdf'
+import { motion } from 'framer-motion';
 
 const PetDetailPage = () => {
   const { id } = useParams();
   const { getPetById } = usePet();
   const [pet, setPet] = useState(null);
   const navigate = useNavigate()
+  const [petImages, setPetImages] = useState([])
 
   useEffect(() => {
     const fetchPetDetails = async () => {
       const petDetails = await getPetById(id);
       setPet(petDetails);
+      console.log(petDetails.photos)
+      if (petDetails && petDetails.photos && petDetails.photos.length > 0) {
+        const photoUrls = petDetails.photos.map(photo => {
+          return photo.full || null;
+        });
+      
+        const trimmedPhotoUrls = photoUrls.slice(0, 3);
+      
+        console.log(trimmedPhotoUrls);
+        setPetImages(trimmedPhotoUrls);
+      }
+      
+      
     };
 
     fetchPetDetails();
@@ -49,66 +63,15 @@ const PetDetailPage = () => {
         return value != null ? (value ? 'Dogs: Yes' : 'Dogs: No') : 'Dogs: Unknown';
     }
   }
-
-
-
-  const petPhotos = pet.photos && pet.photos.length > 0 ? (
-    <div className='flex justify-center items-center'>
-      <Carousel
-        className="pt-6 mb-0 sm:mb-5 text-center"
-        autoPlay
-        infiniteLoop
-        showArrows
-        showThumbs={true}
-        showIndicators={false}
-        showStatus={false}
-        interval={5000}
-      >
-        {pet.photos.map((photo, index) => (
-          <div key={index} className="w-[100%] flex sm:flex-row justify-center rounded-2xl items-center">
-            {photo.medium ? (
-              <img
-                src={photo.medium}
-                alt={pet.name}
-                className="max-h-[250px] object-contain object-center rounded-2xl"
-              />
-            ) : (
-              <img
-                src={placeholder}
-                alt={pet.name}
-                className="max-h-[250px] object-contain object-center rounded-2xl"
-              />
-            )}
-          </div>
-        ))}
-      </Carousel>
-
-    </div>
-  ) : (
-    <p>{placeholder}</p>
-  );
-
+  
   return (
-    <div className="max-w-[100%] flex flex-col justify-center items-center pt-2 font-[Poppins]">
+    <div className="w-full flex flex-col justify-center items-center pt-2 overflow-hidden">
       <SectionHeader title={pet.name} />
-      <div className='flex items-center w-[380px] text-left leading-4 mt-10 md:w-5/6 lg:w-2/3 xl:w-3/4 2xl:w-2/3'>
+      <div className='flex items-center w-full max-w-6xl justify-start text-left leading-4 mt-10 pl-1 sm:pl-4'>
         <img src={arrow} alt="arrow" className="transform rotate-90 mr-2 w-4 h-4" />
         <a href="#" onClick={() => navigate(-1)}>back previous page</a>
       </div>
-      <div className="w-full flex relative  mt-7 items-center justify-center" key={pet.id}>
-        <Carousel
-          className="pt-6 mb-0 sm:mb-5 text-center"
-          autoPlay
-          infiniteLoop
-          showArrows
-          showThumbs={true}
-          showIndicators={false}
-          showStatus={false}
-          interval={5000}
-        >
-          {petPhotos}
-        </Carousel>
-      </div>
+      <PhotoCarousel petImages={petImages} />  
       <div className='w-[302px] text-left leading-8 mt-5'>
         <p className="tracking-wide"><strong>Name:</strong> {pet.name}</p>
         <p><strong>Age:</strong> {pet.age}</p>
@@ -175,3 +138,64 @@ const PetDetailPage = () => {
 };
 
 export default PetDetailPage;
+
+const PhotoCarousel = ({petImages}) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleThumbnailClick = (index) => {
+    setActiveIndex(index);
+  };
+
+  if (petImages.length === 0) {
+    return (
+      <div className='w-full flex justify-center items-center rounded-full'>
+        <img src={placeholder} alt="missing pet placeholder image" className='h-[30rem] w-72' />
+      </div>
+    )
+  }
+
+  return (
+    <div className='w-full flex flex-col gap-3 items-center justify-center'>
+      <div className='w-full flex flex-row relative gap-4 mt-7 items-center justify-center h-[30rem]'>
+        {petImages.map((photo, index) => (
+          <motion.img
+            key={index}
+            src={photo}
+            alt={`pet image ${index}`}
+            className='w-full min-[420px]:w-[320px] absolute object-cover object-center h-[30rem]'
+            initial='hidden'
+            animate={index === activeIndex ? 'visible' : 'hidden'}
+            variants={photoVariants}
+          />
+        ))}
+      </div>
+      <div className='w-full flex flex-row relative gap-4 items-center justify-center'>
+        {petImages.map((photo, index) => (
+          <motion.img
+            key={index}
+            src={photo}
+            alt={`pet image ${index}`}
+            className='object-cover object-center h-[3rem] w-[3rem] rounded-lg cursor-pointer'
+            initial='hidden'
+            animate={index === activeIndex ? 'visible' : 'hidden'}
+            whileHover={{
+              scale: .95,
+              transition: { duration: .3 },
+            }}
+            variants={thumbnailVariants}
+            onClick={() => handleThumbnailClick(index)}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const photoVariants = {
+  hidden: { opacity: 0, zIndex: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, zIndex: 1, transition: { duration: 0.5 } },
+};
+const thumbnailVariants = {
+  hidden: { opacity: .2 },
+  visible: { opacity: 1 },
+};
