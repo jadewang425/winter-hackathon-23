@@ -13,7 +13,7 @@ const ExpandableDropdown = ({ title, children }) => {
 
   return (
     <motion.div animate={isExpanded ? "open" : "closed"}  className='w-full bg-[#214038]/80 flex justify-center items-center flex-col  border-b-2 border-[#f9f9f9]' >
-      <div className='max-w-6xl w-full p-4 text-white font-bold flex justify-between items-center' onClick={handleToggle} style={{ cursor: 'pointer' }}>
+      <div className='max-w-6xl w-full py-4 px-4 min-[1187px]:px-0 text-white font-bold flex justify-between items-center' onClick={handleToggle} style={{ cursor: 'pointer' }}>
         {title}
         <motion.div variants={iconVariants}>
           <IoIosArrowDown />
