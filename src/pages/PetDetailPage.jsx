@@ -46,21 +46,21 @@ const PetDetailPage = () => {
   const renameValue = (key, value) => {
     switch (key) {
       case 'declawed':
-        return value ? 'Declawed: Yes' : 'Declawed: No'
+        return value ? <p><strong>Declawed</strong>: Yes</p> : <p><strong>Declawed</strong>: No</p>
       case 'spayed_neutered':
-        return value ? 'Spayed / Neutered: : Yes' : 'Spayed / Neutered: No'
+        return value ? <p><strong>Spayed / Neutered</strong>: Yes</p> : <p><strong>Spayed / Neutered</strong>: No</p>
       case 'house_trained':
-        return value ? 'House Trained: Yes' : 'House Trained: No'
+        return value ? <p><strong>House Trained</strong>: Yes</p> : <p><strong>House Trained</strong>: No</p>
       case 'shots_current':
-        return value ? 'Shots Up to Date: Yes' : 'Shots Up to Date: No'
+        return value ? <p><strong>Shots Up to Date</strong>: Yes</p> : <p><strong>Shots Up to Date</strong>: No</p>
       case 'special_needs':
-        return value ? 'Special Needs: Yes' : 'Special Needs: No'
+        return value ? <p><strong>Special Needs</strong>: Yes</p> : <p><strong>Special Needs</strong>: No</p>
       case 'cats':
-        return value != null ? (value ? 'Cats: Yes' : 'Cats: No') : 'Cats: Unknown';
+        return value != null ? (value ? <p>Cats: Yes</p> : <p>Cats: No</p>) : <p>Cats: Unknown</p>
       case 'children':
-        return value != null ? (value ? 'Children: Yes' : 'Children: No') : 'Children: Unknown';
+        return value != null ? (value ? <p>Children: Yes</p> : <p>Children: No</p>) : <p>Children: Unknown</p>
       case 'dogs':
-        return value != null ? (value ? 'Dogs: Yes' : 'Dogs: No') : 'Dogs: Unknown';
+        return value != null ? (value ? <p>Dogs: Yes</p> : <p>Dogs: No</p>) : <p>Dogs: Unknown</p>
     }
   }
   
@@ -72,38 +72,39 @@ const PetDetailPage = () => {
         <a href="#" onClick={() => navigate(-1)}>back previous page</a>
       </div>
       <PhotoCarousel petImages={petImages} />  
-      <div className='w-[302px] text-left leading-8 mt-5'>
-        <p className="tracking-wide"><strong>Name:</strong> {pet.name}</p>
-        <p><strong>Age:</strong> {pet.age}</p>
-        <p><strong>Breed:</strong> {pet.breeds.primary}</p>
-        <p><strong>Size:</strong> {pet.size}</p>
-        <p><strong>Gender:</strong> {pet.gender}</p>
-        {pet.description !== null && pet.description !== undefined && (
-          <div>
-            <strong>Background:</strong>{" "}
-            <div dangerouslySetInnerHTML={{ __html: pet.description }} />
-          </div>
-        )}
-        <p><strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
-        <p><strong>Attributes:</strong></p>
-        <div className="px-5">
-          <ul className='list-disc'>
-            {Object.entries(pet.attributes).map(([key, value]) => (
-              <li key={key}> {renameValue(key, value)} </li>
-            ))}
-          </ul>
+      <div className='w-[302px] text-left leading-8 mt-5 md:w-full md:max-w-3xl md:p-5 md:flex lg:max-w-3xl lg:gap-10 justify-between'>
+        <div className='md:w-[50%] mb-3'>
+          <p className="tracking-wide"><strong>Name:</strong> {pet.name}</p>
+          <p><strong>Age:</strong> {pet.age}</p>
+          <p><strong>Breed:</strong> {pet.breeds.primary}</p>
+          <p><strong>Size:</strong> {pet.size}</p>
+          <p><strong>Gender:</strong> {pet.gender}</p>
+          <p><strong>Color:</strong> {pet.colors && pet.colors.primary ? pet.colors.primary : 'Unknown'}</p>
+          {pet.description !== null && pet.description !== undefined && (
+            <div>
+              <strong>Background:</strong>{" "}
+              <div dangerouslySetInnerHTML={{ __html: pet.description }} />
+            </div>
+          )}
         </div>
-        <p><strong>Environment:</strong></p>
-        <div className="px-5">
-          <ul className='list-disc'>
-            {Object.entries(pet.environment).map(([key, value]) => (
-              <li key={key}> {renameValue(key, value)} </li>
+        <div className='md:w-[200px]'>
+          <div>
+            {Object.entries(pet.attributes).map(([key, value]) => (
+              <div key={key}> {renameValue(key, value)} </div>
             ))}
-          </ul>
+          </div>
+          <p><strong>Environment:</strong></p>
+          <div className="px-5">
+            <ul className='list-disc'>
+              {Object.entries(pet.environment).map(([key, value]) => (
+                <li key={key}> {renameValue(key, value)} </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-3xl  w-full flex flex-col gap-[20px] my-7 px-7">
+      <div className="max-w-3xl w-full flex flex-col gap-[20px] my-7 px-7">
         <p className="text-left sm:text-center">
           If you would like to adopt a pet, please fill out the applicable form below and send it to{' '}
           <a href="mailto:longj1003@aol.com">
