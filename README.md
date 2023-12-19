@@ -42,6 +42,7 @@ Adoption page
 
 ## Final
 [BARK Animal Rescue Redesign](https://barkanimalrescue.netlify.app/)
+
 [Presentation Deck](https://docs.google.com/presentation/d/10QuT1fGbwu3YJ-hYRWgfJzUoBsegEF-Wf6j0TAw_aw4/edit#slide=id.g2a3e4380d5f_0_1)
 
 ![demo](https://i.imgur.com/cBSkk3E.gif)
