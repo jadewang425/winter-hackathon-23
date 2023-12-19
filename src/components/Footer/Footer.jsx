@@ -14,10 +14,10 @@ export default function Footer () {
                 <div className="flex justify-between md:flex-col w-full">
                     <div className="flex justify-center md:mb-5">
                         <ul className="md:flex gap-10">
-                            <li className="hover:underline"><Link to="/about">About Us</Link></li>
-                            <li className="hover:underline"><Link to="/donate">Donate</Link></li>
-                            <li className="hover:underline"><Link to="/adopt">Adopt</Link></li>
-                            <li className="hover:underline"><Link to="/resources">Resources</Link></li>
+                            <li className="hover:underline"><Link to="/about" onClick={() => {window.scroll(0, 0)}}>About Us</Link></li>
+                            <li className="hover:underline"><Link to="/donate" onClick={() => {window.scroll(0, 0)}}>Donate</Link></li>
+                            <li className="hover:underline"><Link to="/adopt" onClick={() => {window.scroll(0, 0)}}>Adopt</Link></li>
+                            <li className="hover:underline"><Link to="/resources" onClick={() => {window.scroll(0, 0)}}>Resources</Link></li>
                         </ul>
                     </div>
                     <div className="flex flex-col pl-10 md:pl-0 w-full md:flex-row md:justify-center gap-5 md:mb-5">

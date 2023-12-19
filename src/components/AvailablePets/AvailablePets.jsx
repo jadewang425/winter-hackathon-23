@@ -24,7 +24,13 @@ const [cats, setCats] = useState([]);
             <div className="max-w-2xl flex flex-col gap-1 overflow-hidden  sm:w-full sm:items-center">
                 <PetContainer petType={cats} header='Available Cats' />
                 <PetContainer petType={dogs} header='Available Dogs' />
-                <Link to={`/adoption`} className="w-32 h-8 bg-[#E5BC01] text-[#214038] flex justify-center items-center rounded-2xl my-2">
+                <Link 
+                    to={`/adoption`} 
+                    className="w-32 h-8 bg-[#E5BC01] text-[#214038] flex justify-center items-center rounded-2xl my-2"
+                    onClick={() => {
+                        window.scroll(0, 0)
+                    }}
+                >
                     Adopt
                 </Link>
             </div>
@@ -51,7 +57,13 @@ const PetCard = ({pet}) => {
     const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
     return (
         <div key={pet.id} className="flex flex-col items-left pb-4 gap-4 sm:flex-1 sm:items-center">
-            <Link to={`/adoption/${pet.id}`} className="flex-1" >
+            <Link 
+                to={`/adoption/${pet.id}`} 
+                className="flex-1"
+                onClick={()=>{
+                    window.scroll(0, 0)
+                }}
+            >
                 <img
                     src={lastPhotoUrl}
                     alt={pet.name}

@@ -15,7 +15,7 @@ const HomePage = () => {
       <div className="p-5 flex justify-center">
         <div className="text-center">
           If you have any question, please contact us{' '}
-          <Link to='/contactUs' className="font-semibold text-[#7F3F98]">Here</Link>!
+          <Link to='/contactus' className="font-semibold text-[#7F3F98]" onClick={() => {window.scroll(0, 0)}}>Here</Link>!
         </div>
       </div>
     </div>

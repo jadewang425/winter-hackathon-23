@@ -72,7 +72,7 @@ export default function DonatePage() {
             </ExpandableDropdown>
             <div className="flex flex-col max-w-6xl w-[100%] self-center mb-5">
                 <div className='font-bold p-5'>
-                    Please <Link to="/contactUs" className="text-[#7F3F98]">contact us</Link> to set up a time to drop off donations.
+                    Please <Link to="/contactus" className="text-[#7F3F98]" onClick={() => {window.scroll(0, 0)}}>contact us</Link> to set up a time to drop off donations.
                 </div>
             </div>
         </div>
