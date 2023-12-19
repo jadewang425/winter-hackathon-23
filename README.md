@@ -1,7 +1,8 @@
 # Website Redesign - BARK Animal Rescue
-A website redesign project for Boudreaux’s Animal Rescue Krewe (B.A.R.K.), a non-profit no-kill animal organization. 
+A mobile-first website redesign project for Boudreaux’s Animal Rescue Krewe (B.A.R.K.), a non-profit no-kill animal organization. 
 
 [Current Website URL](http://barkanimalrescue.org/)
+
 Homepage
 ![Screenshot](https://i.imgur.com/vUSAFaM.jpg)
 About page
@@ -13,7 +14,7 @@ Adoption page
 - Redesign a more visually appealing website focusing on Home, About, and Adoption pages
 - Utilize Petfinder API to display adoptable pets on the Adoption page
 - Display donation button
-- Include Facebook page
+- Include Facebook page or post
 
 ### Next Steps
 - Desktop responsive design
@@ -29,6 +30,7 @@ Adoption page
 - Petfinder API
 
 ## Wireframes
+[Figma Wireframes](https://www.figma.com/file/asOPXOaoT5eKck69jK67Eq/Bark-Animal-Rescue?type=design&node-id=147-617&mode=design&t=GUwv2WjdILTDkCtG-0)
 #### Homepage
 ![Screenshot](https://i.imgur.com/dtaf65g.png)
 #### Mobile Menu
@@ -37,6 +39,12 @@ Adoption page
 ![Screenshot](https://i.imgur.com/qEg2aDz.png)
 #### Contact Us page
 ![Screenshot](https://i.imgur.com/VXrjtbR.png)
+
+## Final
+[BARK Animal Rescue Redesign](https://barkanimalrescue.netlify.app/)
+[Presentation Deck](https://docs.google.com/presentation/d/10QuT1fGbwu3YJ-hYRWgfJzUoBsegEF-Wf6j0TAw_aw4/edit#slide=id.g2a3e4380d5f_0_1)
+
+![demo](https://i.imgur.com/cBSkk3E.gif)
 
 ## Contacts
 #### UX/UI Designers
