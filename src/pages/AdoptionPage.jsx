@@ -131,7 +131,7 @@ const PetCard = ({ pet }) => {
   const lastPhotoUrl = lastKeyOfFirstPhotoArray ? pet.photos[0][lastKeyOfFirstPhotoArray] : placeholder;
 
   return (
-    <Link to={`/adoption/${pet.id}`}>
+    <Link to={`/adoption/${pet.id}`} onClick={() => {window.scroll(0, 0)}}>
       <div className="w-[220px] sm:w-[300px] sm:h-[350px] h-[250px] relative overflow-hidden">
         <img
           src={lastPhotoUrl}

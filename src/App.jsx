@@ -27,7 +27,7 @@ function App() {
           <Route path="/adoption" element={<AdoptionPage />} />
           <Route path='/adoption/:id' element={<PetDetailPage />} />
           <Route path='/resources' element={<Resources />} />
-          <Route path='/contactUs' element={<ContactUs />} />
+          <Route path='/contactus' element={<ContactUs />} />
         </Routes>
       </main>
       <Footer />
